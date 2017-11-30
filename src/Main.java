@@ -7,12 +7,17 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        try{
-            InetAddress adr=InetAddress.getLocalHost();
-            System.out.println(adr.getHostAddress());
+        ServerFrame serF =new ServerFrame();
+        serF.setVisible(true);
+        ClientFrame cliF =new ClientFrame();
+        cliF.setVisible(true);
 
-        }catch(UnknownHostException e){
-            System.out.println("");
-        }
+//        try{
+//            InetAddress adr=InetAddress.getLocalHost();
+//            System.out.println(adr.getHostAddress());
+//
+//        }catch(UnknownHostException e){
+//            System.out.println("");
+//        }
     }
 }

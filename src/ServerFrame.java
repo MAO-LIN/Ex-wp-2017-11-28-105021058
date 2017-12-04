@@ -10,24 +10,23 @@ import java.net.UnknownHostException;
 
 public class ServerFrame extends JFrame {
     private Container cp;
-    protected JTextArea jtaTalkDate=new JTextArea();
+    private JTextArea jtaTalkDate=new JTextArea();
     private JScrollPane jspTalkDate=new JScrollPane(jtaTalkDate);
     private JPanel center=new JPanel(new GridLayout(3,3,5,5));
     private JButton btn[]=new JButton[9];
     private JPanel east=new JPanel(new GridLayout(7,1,5,5));
     private JLabel jlbIP=new JLabel("Server IP:");
-    protected JTextField jtfIP=new JTextField();
+    private JTextField jtfIP=new JTextField();
     private JLabel jlbPort =new JLabel("Port");
-    protected JTextField jtfPort=new JTextField("1723");
-    protected JButton start=new JButton("Start");
+    private JTextField jtfPort=new JTextField("1723");
+    private JButton start=new JButton("Start");
     private JButton stop=new JButton("Stop");
     private JButton exit=new JButton("Exit");
     private JPanel south=new JPanel(new GridLayout(1,2,5,5));
     private JTextField jtfTalk=new JTextField();
-    protected JButton send=new JButton("Send");
+    private JButton send=new JButton("Send");
     private Boolean flag=true;
-    protected ServerSocket svs;
-    protected Socket s;
+    private Server server;
     public ServerFrame(){
         initComp();
     }
@@ -79,14 +78,13 @@ public class ServerFrame extends JFrame {
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                try{
-                svs=new ServerSocket(Integer.parseInt(jtfPort.getText()));
-                jtaTalkDate.setText(jtaTalkDate.getText()+"\n"+"等候客戶端的請求..");
-                 s=svs.accept();
-                 jtaTalkDate.setText(jtaTalkDate.getText()+"\n"+"客戶端已連線");
-                }catch (Exception e){
-                 System.out.println("erro"+e);
-                 }
+                if(server==null) {
+                    server = new Server(ServerFrame.this);
+                    jtaTalkDate.append("等待連接中...\n");
+                    server.start();
+                }
+                start();
+
             }
         });
         stop.addActionListener(new ActionListener() {
@@ -104,22 +102,14 @@ public class ServerFrame extends JFrame {
         send.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                try {
-                    OutputStream out = s.getOutputStream();
-                    jtaTalkDate.setText(jtaTalkDate.getText() + "\n" + "資料傳輸中..");
-//                    out.write(jtfTalk.getText().getBytes());
-                    out.write("5566".getBytes());
-                    s.close();
-                    System.out.println(jtaTalkDate.getText() + "\n" + "資料傳輸完畢");
-                }catch (Exception e){
-                    System.out.println(e);
-                }
+            server.send2client(jtfTalk.getText());
+            jtaTalkDate.append("Server:"+jtfTalk.getText()+"\n");
+            jtfTalk.setText("");
             }
         });
         cp.add(BorderLayout.SOUTH,south);
         south.add(jtfTalk);
         south.add(send);
-//        ruuun();
 
     }
     private void flagFunction(){
@@ -145,20 +135,14 @@ public class ServerFrame extends JFrame {
             btn[i].setText("");
             btn[i].setEnabled(true);
         }
+        start.setEnabled(false);
     }
     private void stop(){
         for(int i=0;i<btn.length;i++){
             btn[i].setEnabled(false);
         }
     }
-//    protected void ruuun(){
-//        try{
-//            svs=new ServerSocket(Integer.parseInt(jtfPort.getText()));
-//            jtaTalkDate.setText(jtaTalkDate.getText()+"\n"+"等候客戶端的請求..");
-//            s=svs.accept();
-//            jtaTalkDate.setText(jtaTalkDate.getText()+"\n"+"客戶端已連線");
-//        }catch (Exception e){
-//            System.out.println("erro"+e);
-//        }
-//    }
+    public void addMsg(String str){
+        jtaTalkDate.append("Client:"+str+"\n");
+    }
 }

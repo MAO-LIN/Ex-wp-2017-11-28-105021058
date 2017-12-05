@@ -4,9 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/ServerFrame.java" line="41" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3233a049-6b31-4b63-bea3-8b65991135c0" name="Default" comment="20171204 commitaa">
+    <list default="true" id="3233a049-6b31-4b63-bea3-8b65991135c0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameFrame.java" afterPath="$PROJECT_DIR$/src/GameFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -339,7 +338,7 @@
       <workItem from="1512281018290" duration="9292000" />
       <workItem from="1512296350208" duration="6035000" />
       <workItem from="1512389606789" duration="17114000" />
-      <workItem from="1512430161322" duration="4330000" />
+      <workItem from="1512430161322" duration="4344000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1512041032460</created>
@@ -362,11 +361,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512406737080</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="20171204 commitaa">
+      <created>1512435199194</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1512435199194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58955000" />
+    <option name="totallyTimeSpent" value="58969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -412,7 +418,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="20171201 commit" />
     <MESSAGE value="20171204 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="20171204 commit" />
+    <MESSAGE value="20171204 commitaa" />
+    <option name="LAST_COMMIT_MESSAGE" value="20171204 commitaa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

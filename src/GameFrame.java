@@ -1,4 +1,5 @@
 import com.sun.org.apache.xpath.internal.SourceTree;
+import javafx.scene.input.KeyCode;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +19,7 @@ public class GameFrame extends JFrame{
     private Timer alert;
     private Timer walkL;
     private Timer walkR;
+    private Timer jump;
     private int t1Tmp=1;
 //    private int t2Tmp=1;
     private boolean t1Flag=true;
@@ -80,31 +82,50 @@ public class GameFrame extends JFrame{
             }
         });
 //        walkL.start();
+        jump=new Timer(300, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(character.getY()>400-79) {
+                    character.setIcon(charImg[14]);
+                    character.setLocation(character.getX(),character.getY()+10);
+                }else if(character.getY()<=400-79+90&&character.getY()!=400-79){
+                    character.setLocation(character.getX(),character.getY()-10);
+                }else if(character.getY()==400-79){
+                    jump.stop();
+                }
+
+            }
+        });
+
         this.addKeyListener(new KeyListener() {
             boolean keyflag=false;
             @Override
             public void keyTyped(KeyEvent e) {
-//                System.out.println("keyType");
+                System.out.println("keyType");
+                System.out.println(e.getKeyChar());
 
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
-
+                int key = e.getKeyCode();
                 if(keyflag==false){
-                    if(e.getKeyCode()==65){
+                    if(key==65){
                         alert.stop();
                         walkL.start();
-                    }else if(e.getKeyCode()==32){
-
+                    }else if(key == e.VK_ENTER){
+                        System.out.println("keyPressed");
+                        jump.start();
                         //jump
-                    }else if(e.getKeyCode()==68){
+                    }else if(key==68){
                         alert.stop();
                         walkR.start();
                         //right
-                    }else if(e.getKeyCode()==83){
+                    }else if(key==83){
 
                         //down
+                    }else{
+                        System.out.println(key);
                     }
                     keyflag=true;
                 }
@@ -114,15 +135,16 @@ public class GameFrame extends JFrame{
 
             @Override
             public void keyReleased(KeyEvent e) {
-                if(e.getKeyCode()==65) {
+                int key = e.getKeyCode();
+                if(key==65) {
                     charfaced=true;
                     alert.start();
                     walkL.stop();
                     keyflag=false;
                     System.out.println(e.getKeyCode());
-                }else if(e.getKeyCode()==32) {
+                }else if(key == e.VK_ENTER) {
 
-                }else if(e.getKeyCode()==68){
+                }else if(key==68){
                     charfaced=false;
                     alert.start();
                     walkR.stop();
@@ -157,5 +179,8 @@ public class GameFrame extends JFrame{
             character.setIcon(charImg[t1Tmp % (end-start)+1+start]);
 
         }
+    }
+    public void  setJump(){
+        jump.start();
     }
 }

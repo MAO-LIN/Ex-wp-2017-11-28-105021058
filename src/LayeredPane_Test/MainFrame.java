@@ -15,7 +15,9 @@ public class MainFrame extends JFrame{
         initComp();
     }
     private void initComp(){
+        this.setTitle("Ex_JLayeredPane");
         this.setBounds(100,200,700,500);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jlyPane=getLayeredPane();
         for(int i=0;i<7;i++){
             label[i]=new JLabel(Integer.toString(i),JLabel.CENTER);

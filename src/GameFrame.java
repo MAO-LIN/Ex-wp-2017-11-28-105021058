@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class GameFrame extends JFrame{
     private JPanel background=new JPanel(new BorderLayout(5,5));
-//    private JLabel bkimg=new JLabel(new ImageIcon("background.jpg"));
+    private JLabel bkimg=new JLabel(new ImageIcon("background.jpg"));
     private JLabel character=new JLabel();
     private boolean charfaced=true;
 //    private JPanel charter=new JPanel();
@@ -23,8 +23,8 @@ public class GameFrame extends JFrame{
     private int t1Tmp=1;
 //    private int t2Tmp=1;
     private boolean t1Flag=true;
-    private ImageIcon charImg[]=new ImageIcon[15];
-    //AlertR=0,1,2  AlertL=3,4,5 WalkL=6,7,8,9 WalkR=10,11,12,13 Jump=14;
+    private ImageIcon charImg[]=new ImageIcon[17];
+    //AlertR=0,1,2  AlertL=3,4,5 WalkL=6,7,8,9 WalkR=10,11,12,13 Jump=14 Down=15,16;
     public GameFrame(){
         initComp();
     }
@@ -36,6 +36,9 @@ public class GameFrame extends JFrame{
         background.setLayout(null);
         background.setBackground(new Color(255, 166, 85));
         cp.add(BorderLayout.CENTER,background);
+        background.add(bkimg);
+//        bkimg.set
+        background.add(character);
         for(int i=0;i<3;i++){
             charImg[i]=new ImageIcon("Character/default/0/alert_"+i+".png");
         }
@@ -49,8 +52,10 @@ public class GameFrame extends JFrame{
             charImg[i]=new ImageIcon("Character/default/0/walk0_"+(i-10)+".png");
         }
         charImg[14]=new ImageIcon("Character/default/0/jump_0.png");
+        charImg[15]=new ImageIcon("Character/default/0/prone_0.png");
+        charImg[16]=new ImageIcon("Character/default/0/prone_1.png");
         character.setIcon(charImg[0]);
-        character.setBounds(350-61,400-79,61,79);
+        character.setBounds(350-61,400-79,86,79);
         background.add(character);
         alert=new Timer(500, new ActionListener() {
             @Override
@@ -69,7 +74,7 @@ public class GameFrame extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 character.setIcon(charImg[t1Tmp%4+6]);
                 t1Tmp++;
-                character.setLocation(character.getX()-7,character.getY());
+                character.setLocation(character.getX()-8,character.getY());
             }
         });
         walkR=new Timer(200, new ActionListener() {
@@ -78,21 +83,22 @@ public class GameFrame extends JFrame{
                 character.setIcon(charImg[t1Tmp%4+10]);
                 System.out.println(t1Tmp%4+10);
                 t1Tmp++;
-                character.setLocation(character.getX()+7,character.getY());
+                character.setLocation(character.getX()+8,character.getY());
             }
         });
 //        walkL.start();
         jump=new Timer(300, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(character.getY()>400-79) {
+                if(character.getY()<400-79) {
                     character.setIcon(charImg[14]);
-                    character.setLocation(character.getX(),character.getY()+10);
-                }else if(character.getY()<=400-79+90&&character.getY()!=400-79){
                     character.setLocation(character.getX(),character.getY()-10);
+                }else if(character.getY()>=400-79-90){
+                    character.setLocation(character.getX(),character.getY()+10);
                 }else if(character.getY()==400-79){
                     jump.stop();
                 }
+                System.out.println(character.getY());
 
             }
         });
@@ -115,14 +121,23 @@ public class GameFrame extends JFrame{
                         walkL.start();
                     }else if(key == e.VK_ENTER){
                         System.out.println("keyPressed");
+                        character.setIcon(charImg[14]);
+                        character.setLocation(character.getX(),character.getY()-10);
                         jump.start();
+                        alert.stop();
                         //jump
                     }else if(key==68){
                         alert.stop();
                         walkR.start();
                         //right
                     }else if(key==83){
-
+                        alert.stop();
+                        if(charfaced==true) {
+                            character.setIcon(charImg[15]);
+                        }else{
+                            character.setIcon(charImg[16]);
+                        }
+                        character.setLocation(character.getX(),character.getY()+20);
                         //down
                     }else{
                         System.out.println(key);
@@ -143,12 +158,24 @@ public class GameFrame extends JFrame{
                     keyflag=false;
                     System.out.println(e.getKeyCode());
                 }else if(key == e.VK_ENTER) {
+                    keyflag=false;
+                    alert.start();
 
                 }else if(key==68){
                     charfaced=false;
                     alert.start();
                     walkR.stop();
                     keyflag=false;
+                    System.out.println(e.getKeyCode());
+                }else if(key==83){
+                    keyflag=false;
+                    if(charfaced==true) {
+                        character.setIcon(charImg[0]);
+                    }else{
+                        character.setIcon(charImg[3]);
+                    }
+                    character.setLocation(character.getX(),character.getY()-20);
+                    alert.start();
                     System.out.println(e.getKeyCode());
                 }
 //                System.out.println("keyReleased");

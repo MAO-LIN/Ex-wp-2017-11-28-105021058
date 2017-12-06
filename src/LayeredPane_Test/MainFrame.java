@@ -30,4 +30,7 @@ public class MainFrame extends JFrame{
                     new Integer(101+i));
         }
     }
+    //Reference
+    //http://blog.csdn.net/levelmini/article/details/26692205
+    //https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html
 }

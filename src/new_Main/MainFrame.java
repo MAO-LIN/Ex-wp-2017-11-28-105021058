@@ -57,7 +57,7 @@ public class  MainFrame extends JFrame {
 //        jlyPane.add(characterlb[1], JLayeredPane.PALETTE_LAYER,new Integer(102));
 
         walkT=new Timer(125, new ActionListener() {
-            int t1Tmp=0;
+            int t1Tmp=1;
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(charList.get(0).getCharface()==true){
@@ -168,11 +168,15 @@ public class  MainFrame extends JFrame {
                         keyFlag=true;
                     } else if (key == KeyEvent.VK_RIGHT) {
                             charList.get(0).setCharface(false);
+                            character[0].setLocation(character[0].getX()+10,character[0].getY());
+                            character[0].setIcon(walk[4]);
                             standT.stop();
                             walkT.start();
                         keyFlag=true;
                     } else if (key == KeyEvent.VK_LEFT) {
                             charList.get(0).setCharface(true);
+                            character[0].setLocation(character[0].getX()-10,character[0].getY());
+                            character[0].setIcon(walk[0]);
                             standT.stop();
                             walkT.start();
                         keyFlag=true;

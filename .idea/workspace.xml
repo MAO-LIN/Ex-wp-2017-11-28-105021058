@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4d4097-4c18-4234-b2d3-859aa267e653" name="Default" comment="20171209 commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NewCharacter/Character01/attack/right/stabO1_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NewCharacter/Character01/attack/right/stabO1_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NewCharacter/Character01/attack/right/stabO2_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NewCharacter/Character01/attack/right/stabO2_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame.class" />
+    <list default="true" id="be4d4097-4c18-4234-b2d3-859aa267e653" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/MainFrame.java" afterPath="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
     </list>
@@ -41,8 +36,8 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="132" column="32" lean-forward="true" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="169" column="63" lean-forward="true" selection-start-line="169" selection-start-column="63" selection-end-line="169" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#708#719#0" expanded="true" />
@@ -521,7 +516,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512607674863</updated>
-      <workItem from="1512797547536" duration="27103000" />
+      <workItem from="1512797547536" duration="27819000" />
     </task>
     <task id="LOCAL-00001" summary="20171209 commit">
       <created>1512802294133</created>
@@ -551,11 +546,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512824951236</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="20171209 commit">
+      <created>1512831954444</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1512831954444</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27103000" />
+    <option name="totallyTimeSpent" value="27819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -724,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="132" column="32" lean-forward="true" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="32" />
+        <state relative-caret-position="315">
+          <caret line="169" column="63" lean-forward="true" selection-start-line="169" selection-start-column="63" selection-end-line="169" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#708#719#0" expanded="true" />

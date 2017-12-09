@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4d4097-4c18-4234-b2d3-859aa267e653" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Character.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Character.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/Character.java" afterPath="$PROJECT_DIR$/src/new_Main/Character.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/MainFrame.java" afterPath="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
     </list>
     <ignored path="Ex-wp-2017-11-28-105021058.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/new_Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -37,8 +37,8 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2793">
-              <caret line="157" column="50" lean-forward="true" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
+            <state relative-caret-position="1197">
+              <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#659#670#0" expanded="true" />
@@ -49,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Character.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="-64">
               <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CharacterT.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CharacterT.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/new_Main/CharacterT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="21">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,9 +107,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/new_Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/new_Main/CharacterT.java" />
         <option value="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/new_Main/Character.java" />
+        <option value="$PROJECT_DIR$/src/new_Main/CharacterT.java" />
       </list>
     </option>
   </component>
@@ -538,7 +538,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512607674863</updated>
-      <workItem from="1512797547536" duration="23032000" />
+      <workItem from="1512797547536" duration="23536000" />
     </task>
     <task id="LOCAL-00001" summary="20171209 commit">
       <created>1512802294133</created>
@@ -554,11 +554,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512818704621</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20171209 commit">
+      <created>1512824450848</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512824450848</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23032000" />
+    <option name="totallyTimeSpent" value="23536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -690,28 +697,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/new_Main/CharacterT.java">
+    <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="-64">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2793">
-          <caret line="157" column="50" lean-forward="true" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
+        <state relative-caret-position="1197">
+          <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#659#670#0" expanded="true" />
@@ -721,14 +730,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
+    <entry file="file://$PROJECT_DIR$/src/new_Main/CharacterT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="21">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
           </folding>
         </state>
       </provider>

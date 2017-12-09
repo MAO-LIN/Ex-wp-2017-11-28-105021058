@@ -1,8 +1,14 @@
 package new_Main;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Character {
+public class Character extends Thread implements KeyListener{
+    private ImageIcon alert[]=new ImageIcon[6];
+    private ImageIcon jump[]=new ImageIcon[2];
+    private ImageIcon walk[]=new ImageIcon[8];
     private String id;
     private int nowHp,maxHp;
     private boolean charface;
@@ -22,9 +28,66 @@ public class Character {
         this.nowC=nowC;
         //正在使用的指令
     }
-    //抓資料
-    public String getId(){
-        return id;
+
+    @Override
+    public void run() {
+
+    }
+    public void setId(String id){
+        this.id=id;
     }
 
+    public String getId(String id){
+        return id;
+    }
+    public void setNowHp(int NowHp){
+        this.nowHp=nowHp;
+    }
+
+    public int getNowHp(int nowHp){
+        return nowHp;
+    }
+    public void setMaxHp(int maxHp){
+        this.maxHp=maxHp;
+    }
+
+    public int getMaxHp(int maxHp){
+        return maxHp;
+    }
+    public void setCharface(boolean charface){
+        this.charface=charface;
+    }
+
+    public boolean getCharface(boolean charface){
+        return charface;
+    }
+    public void setLocal(Point local){
+        this.local=local;
+    }
+
+    public Point getLocal(Point local){
+        return local;
+    }
+    public void setCharType(int charType){
+        this.charType=charType;
+    }
+
+    public int getCharType(int charType ){
+        return charType;
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

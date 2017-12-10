@@ -8,7 +8,7 @@ import java.awt.event.KeyListener;
 public class Character extends Thread{
     private String id;
     private int nowHp,maxHp;
-    private boolean charface=true;
+    private boolean charface=false;
     private Point local;
     private int charType;
     private String nowC="alert";
@@ -50,7 +50,7 @@ public class Character extends Thread{
         this.charface=charface;
     }
 
-    public boolean getCharface(boolean charface){
+    public boolean getCharface(){
         return charface;
     }
     public void setLocal(Point local){

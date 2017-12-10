@@ -5,7 +5,7 @@ public class Map {
     private int arrayW;
     private int arrayH;
     public Map(int winW,int winH){
-        //10格為10px
+        //1格為10px
         map=new int[arrayH=winH/10][arrayW=winW/10];
         for(int i=0;i<winH/10;i++){
             for(int j=0;j<winW/10;j++){

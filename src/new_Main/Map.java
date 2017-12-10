@@ -75,7 +75,7 @@ public class Map {
             }
 
         }else{
-            startX=(startX+n/10-8);
+            startX=(startX+n/10-7);
             if(map[startY][startX]==1){
                 flag=false;
             }

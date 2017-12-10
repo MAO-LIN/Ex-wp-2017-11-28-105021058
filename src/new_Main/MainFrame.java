@@ -61,9 +61,8 @@ public class  MainFrame extends JFrame {
 
 //        character[0].setBackground(new Color(102, 107,255));
 //        character[0].setOpaque(true);
-
+        //建立石頭(物件)
         jlyPane.add(testlb, JLayeredPane.PALETTE_LAYER,new Integer(102));
-
         testlb.setBounds((450-59+120),420,50,80);
         testlb.setBackground(new Color(255, 213, 175));
         testlb.setOpaque(true);

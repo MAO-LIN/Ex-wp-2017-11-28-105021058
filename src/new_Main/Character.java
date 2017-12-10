@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Character extends Thread{
+public class Character{
     private String id;
     private int nowHp,maxHp;
     private boolean charface=false;
@@ -66,8 +66,8 @@ public class Character extends Thread{
         return charType;
     }
 
-    @Override
-    public void run() {
-
-    }
+//    @Override
+//    public void run() {
+//
+//    }
 }

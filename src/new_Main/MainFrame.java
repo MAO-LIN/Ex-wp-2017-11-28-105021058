@@ -27,7 +27,9 @@ public class  MainFrame extends JFrame {
     private Timer standT;
     private Timer jumpT;
     private Timer attackT;
+    private Map map;
     private boolean keyFlag =false;
+    private JLabel testlb=new JLabel("石頭",JLabel.CENTER);
 //    private CharacterT CharacterT=new CharacterT(alert,jump,walk,stand,"alert",0);
 
     public MainFrame() {
@@ -38,36 +40,58 @@ public class  MainFrame extends JFrame {
         charList.add(new Character("aa",100,100,1));
         setCharAnimal(charList.get(0).getCharType());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setBounds(200, 200, 900, 600);
+        this.setBounds(200, 200, 1000, 600);
+        //物件碰撞判斷陣列
+        map=new Map(1000,600);
+        //test
+//        map.setObj(100,0,90,81);
+//        System.out.println(map.setChar(100,0,10,10));
+//        map.printMap();
         ImageIcon imgTmp =new ImageIcon("background.jpg");
-        imgTmp.setImage(imgTmp.getImage().getScaledInstance(900,600,Image.SCALE_DEFAULT));
+        imgTmp.setImage(imgTmp.getImage().getScaledInstance(1000,600,Image.SCALE_DEFAULT));
         backgroundImg.setIcon(imgTmp);
         jlyPane = getLayeredPane();
         backgroundP.add(backgroundImg);
         backgroundImg.setOpaque(true);
-        backgroundImg.setBounds(0,0,900,600);
+        backgroundImg.setBounds(0,0,1000,600);
         character[0]=new JLabel(stand[3]);
         //deffault w:59 h:81
         character[0].setBounds(450-59,420,84,81);
+        map.setObj(450-59,420,84,81);
+
 //        character[0].setBackground(new Color(102, 107,255));
 //        character[0].setOpaque(true);
+
+        jlyPane.add(testlb, JLayeredPane.PALETTE_LAYER,new Integer(102));
+
+        testlb.setBounds((450-59+120),420,50,80);
+        testlb.setBackground(new Color(255, 213, 175));
+        testlb.setOpaque(true);
+        map.setObj((450-59+120),420,80,50);
+
         jlyPane.add(character[0], JLayeredPane.PALETTE_LAYER,new Integer(101));
 
         jlyPane.add(backgroundImg, JLayeredPane.DEFAULT_LAYER);
 //        jlyPane.add(characterlb[1], JLayeredPane.PALETTE_LAYER,new Integer(102));
+        //test
+        map.printMap();
 
         walkT=new Timer(125, new ActionListener() {
             int t1Tmp=1;
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(charList.get(0).getCharface()==true){
-                    character[0].setIcon(walk[t1Tmp%4]);
-                    t1Tmp++;
-                    character[0].setLocation(character[0].getX()-10,character[0].getY());
+                    if(map.setCharWalk(character[0].getX(),character[0].getY(),-10)==true) {
+                        character[0].setIcon(walk[t1Tmp % 4]);
+                        t1Tmp++;
+                        character[0].setLocation(character[0].getX() - 10, character[0].getY());
+                    }
                 }else if(charList.get(0).getCharface()==false){
-                    character[0].setIcon(walk[t1Tmp%4+4]);
-                    t1Tmp++;
-                    character[0].setLocation(character[0].getX()+10,character[0].getY());
+                    if(map.setCharWalk(character[0].getX(),character[0].getY(),10)==true) {
+                        character[0].setIcon(walk[t1Tmp % 4 + 4]);
+                        t1Tmp++;
+                        character[0].setLocation(character[0].getX() + 10, character[0].getY());
+                    }
                 }
             }
         });
@@ -121,7 +145,7 @@ public class  MainFrame extends JFrame {
             boolean isTop=false;
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(character[0].getY()>y-80&&isTop==false) {
+                if(character[0].getY()>y-60&&isTop==false) {
                     character[0].setLocation(character[0].getX(), character[0].getY() - 10);
                 }else if(character[0].getY()==y&&isTop==true){
                     if( charList.get(0).getCharface()==true){
@@ -133,7 +157,7 @@ public class  MainFrame extends JFrame {
                     isTop=false;
                     jumpT.stop();
                     standT.restart();
-                }else if(character[0].getY()==y-80&&isTop==false){
+                }else if(character[0].getY()==y-60&&isTop==false){
                     isTop=true;
                     character[0].setLocation(character[0].getX(), character[0].getY() + 10);
                 }else if(isTop==true){
@@ -167,19 +191,23 @@ public class  MainFrame extends JFrame {
                             jumpT.start();
                         keyFlag=true;
                     } else if (key == KeyEvent.VK_RIGHT) {
+                        if(map.setCharWalk(character[0].getX(),character[0].getY(),10)==true) {
                             charList.get(0).setCharface(false);
-                            character[0].setLocation(character[0].getX()+10,character[0].getY());
+                            character[0].setLocation(character[0].getX() + 10, character[0].getY());
                             character[0].setIcon(walk[4]);
                             standT.stop();
                             walkT.start();
-                        keyFlag=true;
+                            keyFlag = true;
+                        }
                     } else if (key == KeyEvent.VK_LEFT) {
+                        if(map.setCharWalk(character[0].getX(),character[0].getY(),-10)==true) {
                             charList.get(0).setCharface(true);
-                            character[0].setLocation(character[0].getX()-10,character[0].getY());
+                            character[0].setLocation(character[0].getX() - 10, character[0].getY());
                             character[0].setIcon(walk[0]);
                             standT.stop();
                             walkT.start();
-                        keyFlag=true;
+                            keyFlag = true;
+                        }
                     }else if(key == KeyEvent.VK_Z){
                             standT.stop();
                             attackT.start();
@@ -231,9 +259,9 @@ public class  MainFrame extends JFrame {
     private void setCharAnimal(int charType){
         for(int i=0;i<3;i++){
             alert[i]=new ImageIcon("NewCharacter/Character0"+Integer.toString(charType)+"/alert/left/alert_"+Integer.toString(i)+".png");
-            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/alert/left/alert_"+Integer.toString(i)+".png");
+//            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/alert/left/alert_"+Integer.toString(i)+".png");
         }
-        System.out.println("NewCharacter/Character01/alert/left");
+//        System.out.println("NewCharacter/Character01/alert/left");
         for(int i=3;i<6;i++){
             alert[i]=new ImageIcon("NewCharacter/Character0"+Integer.toString(charType)+"/alert/right/alert_"+Integer.toString(i-3)+".png");
         }
@@ -250,7 +278,7 @@ public class  MainFrame extends JFrame {
 
         for(int i=0;i<3;i++){
             stand[i]=new ImageIcon("NewCharacter/Character0"+Integer.toString(charType)+"/stand/left/stand1_"+Integer.toString(i)+".png");
-            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/stand/left/stand1_"+Integer.toString(i)+".png");
+//            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/stand/left/stand1_"+Integer.toString(i)+".png");
         }
 //        System.out.println("NewCharacter/Character01/stand/left");
         for(int i=3;i<6;i++){

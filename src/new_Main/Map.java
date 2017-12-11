@@ -27,6 +27,17 @@ public class Map {
 //            System.out.println();
         }
     }
+    public void setChar(int x,int y,int h,int w){
+        int startX=x/10;
+        int startY=y/10;
+        for(int i=0;i<h/10;i++){
+            for(int j=0;j<w/10;j++){
+                map[startY+i][startX+j]=5;
+//                System.out.print("["+startY+i+"],["+startX+j+"]\t");
+            }
+//            System.out.println();
+        }
+    }
     public boolean setObjCheck(int x,int y,int h,int w){
         boolean flag=true;
         int startX=x/10;
@@ -51,15 +62,18 @@ public class Map {
 //        System.out.println("setX");
         //y [49] =490~500 500為地板 490為人物
         int startY =(y+81-10)/10;
-        System.out.println("setY:"+y);
-        System.out.println("setstartY:"+(y+81-10)/10);
+        //Debug用
+//        System.out.println("setY:"+y);
+//        System.out.println("setstartY:"+(y+81-10)/10);
         if(n>=0){
+            //向右走 抓取右邊腳的前一格
             startX=startX+n/10;
             if(map[startY][startX]==1){
                 flag=false;
             }
             if(flag==false){
-                printMap();
+                //印出判定陣列 測試用
+//                printMap();
                 System.out.println(flag);
                 System.out.println(startY+","+startX);
                 return false;
@@ -67,30 +81,34 @@ public class Map {
                 System.out.println(flag);
                 for(int i=0;i<81/10;i++){
                     map[(startY-7+i)][startX-(8)]=0;
-                    map[(startY-7+i)][startX]=1;
+                    map[(startY-7+i)][startX]=5;
                 }
-                printMap();
+                //印出判定陣列 測試用
+//                printMap();
                 System.out.println(startY+","+startX);
                 return true;
             }
 
         }else{
+            //向左走 抓取左邊腳的前一格
             startX=(startX+n/10-7);
             if(map[startY][startX]==1){
                 flag=false;
             }
             if(flag==false){
-                printMap();
+                //印出判定陣列 測試用
+//                printMap();
                 System.out.println(flag);
                 System.out.println(startY+","+startX);
                 return false;
             }else{
                 System.out.println(flag);
                 for(int i=0;i<81/10;i++){
-                    map[(startY-7+i)][startX]=1;
+                    map[(startY-7+i)][startX]=5;
                     map[(startY-7+i)][startX+8]=0;
                 }
-                printMap();
+                //印出判定陣列 測試用
+//                printMap();
                 System.out.println(startY+","+startX);
                 return true;
             }
@@ -103,7 +121,6 @@ public class Map {
         //+charLabel h:81 and w:84
         int startX=(x+84)/10;
         int startY=(y+81)/10;
-        startY=startY+n/10;
         if(map[startY][startX]==1){
             flag=false;
         }
@@ -131,6 +148,28 @@ public class Map {
             System.out.print(j+"\t");
         }
         System.out.println();
+    }
+    public boolean charDropCheck(int x,int y){
+        //人物最左邊那一格
+        int charX=x/10;
+        //+10px為腳底下面那一格
+        int charY=(y+81+10)/10;
+        //抓底下8格做判定
+        if(map[charY][(charX)]==0&&map[charY][(charX+20/10)]==0&&map[charY][(charX+50/10)]==0&&map[charY][(charX+70/10)]==0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public void charDrop(int x,int y){
+        //人物最左邊那一格
+        int charX=x/10;
+        int charY=y/10;
+        //刷新陣列
+        for(int i=0;i<8;i++){
+            map[charY][(charX+i)]=0;
+            map[(charY+8)][(charX+i)]=5;
+        }
     }
 
 }

@@ -41,6 +41,7 @@ public class  MainFrame extends JFrame {
     }
 
     private void initComp() {
+        this.setTitle("遊戲畫面");
         charList.add(new Character("aa",100,100,1));
         setCharAnimal(charList.get(0).getCharType());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -154,7 +155,7 @@ public class  MainFrame extends JFrame {
                     first=false;
                 }
 //                System.out.println("("+x+","+y+")");
-                if(character[0].getY()>y-60&&isTop==false) {
+                if(character[0].getY()>y-100&&isTop==false) {
                     character[0].setLocation(character[0].getX(), character[0].getY() - 10);
                 }else if(character[0].getY()==y&&isTop==true){
                     if( charList.get(0).getCharface()==true){
@@ -169,7 +170,7 @@ public class  MainFrame extends JFrame {
                     keyFlag=false;
                     jumpT.stop();
                     standT.restart();
-                }else if(character[0].getY()==y-60&&isTop==false){
+                }else if(character[0].getY()==y-100&&isTop==false){
                     isTop=true;
                     character[0].setLocation(character[0].getX(), character[0].getY() + 10);
                 }else if(isTop==true){
@@ -178,14 +179,41 @@ public class  MainFrame extends JFrame {
             }
         });
         jumpRLT=new Timer(30, new ActionListener() {
+            boolean first=true;
+            int x,y;
+            boolean isTop=false;
             @Override
             public void actionPerformed(ActionEvent e) {
-                int x= character[0].getX();
-                int y= character[0].getY();
-                boolean isTop=false;
                 standT.stop();
-
+                System.out.println("");
+                if(first==true){
+                    x= character[0].getX();
+                    y= character[0].getY();
+                    first=false;
+                }
+                if(character[0].getY()>y-100&&isTop==false) {
+                    character[0].setLocation(character[0].getX()+5, character[0].getY() - 10);
+                }else if(character[0].getY()==y&&isTop==true){
+                    if( charList.get(0).getCharface()==true){
+                        character[0].setIcon(stand[0]);
+                    }else{
+                        character[0].setIcon(stand[3]);
+                    }
+                    //數值初始化
+                    first=true;
+                    isTop=false;
+                    //解鎖按鍵事件
+                    keyFlag=false;
+                    jumpRLT.stop();
+                    standT.restart();
+                }else if(character[0].getY()==y-100&&isTop==false){
+                    isTop=true;
+                    character[0].setLocation(character[0].getX()+5, character[0].getY() + 10);
+                }else if(isTop==true){
+                    character[0].setLocation(character[0].getX()+5, character[0].getY() + 10);
+                }
             }
+
         });
         dropT=new Timer(30, new ActionListener() {
             @Override
@@ -229,25 +257,28 @@ public class  MainFrame extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                int key=e.getKeyCode();
-                if(right==true&&key==KeyEvent.VK_SPACE||left==true&&key==KeyEvent.VK_SPACE){
-                    if(right==true){
+                int key = e.getKeyCode();
+                if (right == true && key == KeyEvent.VK_SPACE || left == true && key == KeyEvent.VK_SPACE) {
+                    if (right == true) {
                         System.out.println("right jump");
-                    }else{
+                        character[0].setIcon(jump[1]);
+                        jumpRLT.start();
+
+                    } else {
                         System.out.println("left jump");
                     }
-                    if(keyFlag==false) {
+                    if (keyFlag == false) {
                         keyFlag = true;
                     }
-                }
+                } else {
 
                     if (key == KeyEvent.VK_DOWN) {
 
                         down = true;
 
                     } else if (key == KeyEvent.VK_SPACE) {
-                        up=true;
-                        if(keyFlag==false) {
+                        up = true;
+                        if (keyFlag == false) {
 //                            System.out.println("Space");
                             if (charList.get(0).getCharface() == true) {
                                 character[0].setIcon(jump[0]);
@@ -260,7 +291,7 @@ public class  MainFrame extends JFrame {
                         }
                     } else if (key == KeyEvent.VK_RIGHT) {
                         right = true;
-                        if(keyFlag==false) {
+                        if (keyFlag == false) {
                             if (map.setCharWalk(character[0].getX(), character[0].getY(), 10) == true) {
                                 charList.get(0).setCharface(false);
                                 character[0].setLocation(character[0].getX() + 10, character[0].getY());
@@ -272,7 +303,7 @@ public class  MainFrame extends JFrame {
                         }
                     } else if (key == KeyEvent.VK_LEFT) {
                         left = true;
-                        if(keyFlag==false) {
+                        if (keyFlag == false) {
                             if (map.setCharWalk(character[0].getX(), character[0].getY(), -10) == true) {
                                 charList.get(0).setCharface(true);
                                 character[0].setLocation(character[0].getX() - 10, character[0].getY());
@@ -282,14 +313,15 @@ public class  MainFrame extends JFrame {
                                 keyFlag = true;
                             }
                         }
-                    }else if(key == KeyEvent.VK_Z){
+                    } else if (key == KeyEvent.VK_Z) {
                         att = true;
-                        if(keyFlag==false) {
+                        if (keyFlag == false) {
                             standT.stop();
                             attackT.start();
                             keyFlag = true;
                         }
                     }
+                }
             }
 
             @Override

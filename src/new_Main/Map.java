@@ -73,7 +73,7 @@ public class Map {
             }
             if(flag==false){
                 //印出判定陣列 測試用
-//                printMap();
+                printMap();
                 System.out.println(flag);
                 System.out.println(startY+","+startX);
                 return false;
@@ -84,7 +84,7 @@ public class Map {
                     map[(startY-7+i)][startX]=5;
                 }
                 //印出判定陣列 測試用
-//                printMap();
+                printMap();
                 System.out.println(startY+","+startX);
                 return true;
             }
@@ -97,7 +97,7 @@ public class Map {
             }
             if(flag==false){
                 //印出判定陣列 測試用
-//                printMap();
+                printMap();
                 System.out.println(flag);
                 System.out.println(startY+","+startX);
                 return false;
@@ -108,7 +108,7 @@ public class Map {
                     map[(startY-7+i)][startX+8]=0;
                 }
                 //印出判定陣列 測試用
-//                printMap();
+                printMap();
                 System.out.println(startY+","+startX);
                 return true;
             }
@@ -153,7 +153,7 @@ public class Map {
         //人物最左邊那一格
         int charX=x/10;
         //+10px為腳底下面那一格
-        int charY=(y+81+10)/10;
+        int charY=(y+71+10)/10;
         //抓底下8格做判定
         if(map[charY][(charX)]==0&&map[charY][(charX+20/10)]==0&&map[charY][(charX+50/10)]==0&&map[charY][(charX+70/10)]==0){
             return true;
@@ -169,6 +169,17 @@ public class Map {
         for(int i=0;i<8;i++){
             map[charY][(charX+i)]=0;
             map[(charY+8)][(charX+i)]=5;
+        }
+    }
+    public void removeChar(int x,int y, int h ,int w){
+        int startX=x/10;
+        int startY=y/10;
+        for(int i=0;i<h/10;i++){
+            for(int j=0;j<w/10;j++){
+                map[startY+i][startX+j]=1;
+//                System.out.print("["+startY+i+"],["+startX+j+"]\t");
+            }
+//            System.out.println();
         }
     }
 

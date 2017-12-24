@@ -1,7 +1,8 @@
 package new_Main;
 
-import javafx.scene.layout.BackgroundImage;
+//import javafx.scene.layout.BackgroundImage;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.xml.bind.annotation.XmlType;
 import java.awt.*;
@@ -9,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.util.ArrayList;
 
 public class  MainFrame extends JFrame {
@@ -19,6 +21,7 @@ public class  MainFrame extends JFrame {
     private ImageIcon attack[]=new ImageIcon[8];
     private JLayeredPane jlyPane = new JLayeredPane();
     private ArrayList<Character> charList = new ArrayList<Character>();
+    private ArrayList<Thread> threadList = new ArrayList<Thread>();
     private JPanel backgroundP = new JPanel(new BorderLayout(0, 0));
     private JLabel backgroundImg = new JLabel();
     public JLabel character[] = new JLabel[2];
@@ -38,6 +41,7 @@ public class  MainFrame extends JFrame {
     private JLabel testlb=new JLabel("石頭",JLabel.CENTER);
     private JLabel floorlb=new JLabel();
     private JLabel lb=new JLabel();
+    private JPanel testPane=new JPanel();
 //    private JPanel background=new JPanel();
 //    private CharacterT CharacterT=new CharacterT(alert,jump,walk,stand,"alert",0);
 
@@ -52,7 +56,7 @@ public class  MainFrame extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setBounds(200, 200, 1000, 600);
         //物件碰撞判斷陣列
-        map=new Map(1000,600);
+        map=new Map(3000,600);
         //test
 //        map.setObj(100,0,90,81);
 //        System.out.println(map.setChar(100,0,10,10));
@@ -84,11 +88,11 @@ public class  MainFrame extends JFrame {
 //        map.setObj((450-59+120),420,80,50);
 
         //建立平台
-//        jlyPane.add(lb, JLayeredPane.PALETTE_LAYER,new Integer(101));
-//        lb.setBounds(200,300,400,50);
-//        lb.setBackground(new Color(164, 94, 26));
-//        lb.setOpaque(true);
-//        map.setObj(200,300,50,400);
+        jlyPane.add(lb, JLayeredPane.PALETTE_LAYER,new Integer(101));
+        lb.setBounds(200,300,400,50);
+        lb.setBackground(new Color(164, 94, 26));
+        lb.setOpaque(true);
+        map.setObj(200,300,50,400);
 
         //建立地板
         jlyPane.add(floorlb, JLayeredPane.PALETTE_LAYER,new Integer(102));
@@ -96,6 +100,17 @@ public class  MainFrame extends JFrame {
 //        floorlb.setBackground(new Color(164, 94, 26));
         floorlb.setIcon(new ImageIcon("floor2.png"));
         floorlb.setOpaque(true);
+
+        //建立Sky
+        testPane.setBounds(0,0,100,600);
+//        testPane.setLayout(new BorderLayout(5,5));
+//        testPane.add(new JLabel(new ImageIcon("skybackgroundRe.png")));
+        SkyPane skyp=new SkyPane();
+        threadList.add(new Thread(skyp));
+        threadList.get(0).start();
+        skyp.setOpaque(false);
+//        testPane.setBackground(new Color(255, 69, 154));
+        jlyPane.add(skyp, JLayeredPane.PALETTE_LAYER,new Integer(101));
 
 
 //        jlyPane.add(characterlb[1], JLayeredPane.PALETTE_LAYER,new Integer(102));

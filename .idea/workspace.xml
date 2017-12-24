@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/.idea/workspace.xml" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8411246-601e-4cc8-9d3f-602d817fefdb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/background2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backgroundCG.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/floor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/floor2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/floorObj0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/floorObj1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/floorObj2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sky.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/skybackground.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/new_Main/StartFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Main.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$2.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$3.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$4.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$5.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$6.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$7.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$8.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Map.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Map.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/Main.java" afterPath="$PROJECT_DIR$/src/new_Main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/MainFrame.java" afterPath="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/Map.java" afterPath="$PROJECT_DIR$/src/new_Main/Map.java" />
+    <list default="true" id="e6fbcd4e-fe57-4d1d-945c-ba1a1875ede2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +15,7 @@
       <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="84">
               <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
@@ -55,8 +25,8 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="419" column="13" lean-forward="true" selection-start-line="419" selection-start-column="13" selection-end-line="419" selection-end-column="13" />
+            <state relative-caret-position="21">
+              <caret line="422" column="49" lean-forward="false" selection-start-line="422" selection-start-column="49" selection-end-line="422" selection-end-column="49" />
               <folding>
                 <element signature="e#708#719#0" expanded="true" />
               </folding>
@@ -68,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/new_Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
-              <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -78,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/new_Main/Map.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4032">
-              <caret line="192" column="23" lean-forward="true" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
+              <caret line="192" column="23" lean-forward="false" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
               <folding>
                 <marker date="1513642721222" expanded="true" signature="6022:6039" ph="{...}" />
               </folding>
@@ -89,7 +59,7 @@
       <file leaf-file-name="threadTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/new_Main/threadTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="63">
               <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
               <folding>
                 <element signature="e#86#87#0" expanded="true" />
@@ -102,8 +72,8 @@
       <file leaf-file-name="StartFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/new_Main/StartFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+            <state relative-caret-position="630">
+              <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,39 +83,9 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Map</find>
-      <find>printMap</find>
-      <find>floor</find>
-      <find>drop</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/new_Main/threadTest.java" />
-        <option value="$PROJECT_DIR$/src/new_Main/aa.java" />
-        <option value="$PROJECT_DIR$/src/new_Main/StartFrame.java" />
-        <option value="$PROJECT_DIR$/src/new_Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/new_Main/Map.java" />
-        <option value="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
-      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -153,12 +93,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="373" />
-    <option name="y" value="84" />
-    <option name="width" value="1350" />
-    <option name="height" value="850" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -175,8 +109,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,25 +122,19 @@
             <path>
               <item name="Ex-wp-2017-11-28-105021058" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ex-wp-2017-11-28-105021058" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ex-wp-2017-11-28-105021058" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ex-wp-2017-11-28-105021058" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Saber\Documents\GitHub\Ex-wp-2017-11-28-105021058" />
-      <recent name="C:\Users\Saber\Documents\GitHub\Ex-wp-2017-11-28-105021058\.idea" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -353,60 +282,14 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a8411246-601e-4cc8-9d3f-602d817fefdb" name="Default" comment="" />
-      <created>1512918539427</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1512918539427</updated>
-      <workItem from="1512918545786" duration="1179000" />
-      <workItem from="1512989861575" duration="15947000" />
-      <workItem from="1513513360488" duration="55000" />
-      <workItem from="1513513464183" duration="949000" />
-      <workItem from="1513604626687" duration="12378000" />
-      <workItem from="1513617044088" duration="6422000" />
-    </task>
-    <task id="LOCAL-00001" summary="20171210 commit">
-      <created>1512919672270</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1512919672270</updated>
-    </task>
-    <task id="LOCAL-00002" summary="20171210 commit">
-      <created>1512919710423</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1512919710423</updated>
-    </task>
-    <task id="LOCAL-00003" summary="20171211 commit (add drop event)">
-      <created>1513006116009</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1513006116009</updated>
-    </task>
-    <task id="LOCAL-00004" summary="20171211 commit (add drop event)">
-      <created>1513008976216</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1513008976216</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36930000" />
+    <option name="totallyTimeSpent" value="3000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -421,7 +304,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15282215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1544196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -437,23 +320,71 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="20171210 commit" />
-    <MESSAGE value="20171211 commit (add drop event)" />
-    <MESSAGE value="20171218 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="20171218 commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_Main/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4032">
+          <caret line="192" column="23" lean-forward="true" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
+          <folding>
+            <marker date="1513642721222" expanded="true" signature="6022:6039" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_Main/threadTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding>
+            <element signature="e#86#87#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_Main/StartFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8862">
+          <caret line="422" column="49" lean-forward="true" selection-start-line="422" selection-start-column="49" selection-end-line="422" selection-end-column="49" />
+          <folding>
+            <element signature="e#708#719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -542,7 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -597,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -650,7 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="84">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
@@ -683,7 +611,7 @@
     <entry file="file://$PROJECT_DIR$/src/new_Main/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4032">
-          <caret line="192" column="23" lean-forward="true" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
+          <caret line="192" column="23" lean-forward="false" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
           <folding>
             <marker date="1513642721222" expanded="true" signature="6022:6039" ph="{...}" />
           </folding>
@@ -692,8 +620,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/StartFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        <state relative-caret-position="630">
+          <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -702,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/threadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="63">
           <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding>
             <element signature="e#86#87#0" expanded="true" />
@@ -714,15 +642,15 @@
     <entry file="file://$PROJECT_DIR$/src/new_Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
-          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="419" column="13" lean-forward="true" selection-start-line="419" selection-start-column="13" selection-end-line="419" selection-end-column="13" />
+        <state relative-caret-position="21">
+          <caret line="422" column="49" lean-forward="false" selection-start-line="422" selection-start-column="49" selection-end-line="422" selection-end-column="49" />
           <folding>
             <element signature="e#708#719#0" expanded="true" />
           </folding>

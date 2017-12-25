@@ -18,7 +18,7 @@ public class SkyPane extends JPanel implements Runnable{
     }
     private void init(){
         try{
-            image= ImageIO.read(new File("skybackground.jpg"));
+            image= ImageIO.read(new File("sky.png"));
         }catch(IOException ie){
             ie.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class SkyPane extends JPanel implements Runnable{
 
     @Override
     public void run() {
-        t1=new Timer(200, new ActionListener() {
+        t1=new Timer(500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 x-=10;
@@ -40,10 +40,10 @@ public class SkyPane extends JPanel implements Runnable{
         Graphics2D g2d=(Graphics2D) g;
 //        g2d.drawImage(image,0,0,null,this);
         if(x<=0){
-            g2d.drawImage(image,1000+x,y,1000, 600,this);
+            g2d.drawImage(image,700+x,y,700, 300,this);
         }
-        g2d.drawImage(image,x,y,1000, 600,this);
-        if(x<=-1000){
+        g2d.drawImage(image,x,y,700, 300,this);
+        if(x<=-700){
             x=0;
         }
     }

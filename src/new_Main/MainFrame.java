@@ -129,7 +129,7 @@ public class  MainFrame extends JFrame {
 
         //建立平台
         jlyPane.add(lb2, JLayeredPane.PALETTE_LAYER,new Integer(101));
-        lb2.setBounds(1500,250,400,50);
+        lb2.setBounds(900,250,400,50);
         lb2.setBackground(new Color(84, 164, 126));
         lb2.setOpaque(true);
         lbThread=new Thread(lb2);

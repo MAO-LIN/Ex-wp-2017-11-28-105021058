@@ -25,9 +25,13 @@ public class BackgroundFloor extends JLabel implements Runnable{
     public void run() {
         while(true){
             if(mf.getNowC().equals("right")){
+                mf.getMap().setMapDrawStart(mf.getMap().getMapDrawStart()+1);
                 x-=10;
+                System.out.println(mf.getMap().getMapDrawStart());
             }else if(mf.getNowC().equals("left")){
+                mf.getMap().setMapDrawStart(mf.getMap().getMapDrawStart()-1);
                 x+=10;
+                System.out.println(mf.getMap().getMapDrawStart());
             }
             try {
                 Thread.sleep(145);

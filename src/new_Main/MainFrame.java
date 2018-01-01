@@ -707,4 +707,7 @@ public class  MainFrame extends JFrame {
     public Character getchar(){
         return charList.get(0);
     }
+    public Map getMap(){
+        return  this.map;
+    }
 }

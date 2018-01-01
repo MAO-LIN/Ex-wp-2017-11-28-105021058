@@ -223,6 +223,12 @@ public class Map implements Runnable{
 //            System.out.println();
         }
     }
+    public void setMapDrawStart( int mapStart){
+        this.mapDrawStart=mapStart;
+    }
+    public int getMapDrawStart(){
+        return  mapDrawStart;
+    }
 
     @Override
     public void run() {

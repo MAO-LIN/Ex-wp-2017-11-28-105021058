@@ -56,4 +56,8 @@ public class UIpanel extends JPanel implements Runnable{
             }
         }
     }
+
+    public JButton getJbtn1() {
+        return jbtn1;
+    }
 }

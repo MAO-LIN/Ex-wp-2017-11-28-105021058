@@ -2,15 +2,12 @@ package new_Main;
 
 //import javafx.scene.layout.BackgroundImage;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.xml.bind.annotation.XmlType;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.File;
 import java.util.ArrayList;
 
 public class  MainFrame extends JFrame {
@@ -61,6 +58,13 @@ public class  MainFrame extends JFrame {
     private Thread backgroundThread;
 //    private JPanel background=new JPanel();
 //    private CharacterT CharacterT=new CharacterT(alert,jump,walk,stand,"alert",0);
+    //建立 Monster
+    private ArrayList<Monster> monsterList=new ArrayList<Monster>();
+    private ArrayList<Thread> monsterThreadList=new ArrayList<Thread>();
+    private int monsterTota=0;
+    private ArrayList<MonsterLocal> monsterLocalList =new ArrayList<MonsterLocal>();
+    private ArrayList<Thread> monsterLocalThreadList =new ArrayList<Thread>();
+    //Monster startList
 
     public MainFrame() {
         initComp();
@@ -136,7 +140,7 @@ public class  MainFrame extends JFrame {
         lbThread.start();
 
         //建立地板
-        jlyPane.add(backgroundLabel, JLayeredPane.PALETTE_LAYER,new Integer(102));
+        jlyPane.add(backgroundLabel, JLayeredPane.PALETTE_LAYER,102);
 //        floorlb.setBounds(0,500,1000,100);
 //        floorlb.setBackground(new Color(164, 94, 26));
 //        floorlb.setIcon(new ImageIcon("floor2.png"));
@@ -145,7 +149,6 @@ public class  MainFrame extends JFrame {
         backgroundLabel.setBounds(0,470,1000,130);
         Thread bgThread=new Thread(backgroundLabel);
         bgThread.start();
-
 
         //建立Sky
 //        testPane.setBounds(0,0,100,600);
@@ -158,12 +161,26 @@ public class  MainFrame extends JFrame {
         skyp.setOpaque(false);
         skyp.setBounds(0,0,1000,300);
 //        testPane.setBackground(new Color(255, 69, 154));
-        jlyPane.add(skyp, JLayeredPane.PALETTE_LAYER,new Integer(101));
+        jlyPane.add(skyp, JLayeredPane.PALETTE_LAYER,101);
 
         //角色執行續
         charThread=new Thread(charList.get(0));
         charThread.start();
 
+        //建立 Monster
+        UIpane.getJbtn1().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                monsterList.add(new Monster(700,3000,MainFrame.this));
+                jlyPane.add(monsterList.get(monsterList.size()-1), JLayeredPane.PALETTE_LAYER,87);
+                monsterThreadList.add(new Thread(monsterList.get(monsterList.size()-1)));
+                monsterThreadList.get(monsterThreadList.size()-1).start();
+
+                monsterLocalList.add(new MonsterLocal(monsterList.get(monsterList.size()-1),MainFrame.this));
+                monsterLocalThreadList.add(new Thread(monsterLocalList.get(monsterLocalList.size()-1)));
+                monsterLocalThreadList.get(monsterLocalThreadList.size()-1).start();
+            }
+        });
 
 //        jlyPane.add(characterlb[1], JLayeredPane.PALETTE_LAYER,new Integer(102));
         //test

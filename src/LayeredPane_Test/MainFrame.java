@@ -26,8 +26,8 @@ public class MainFrame extends JFrame{
             label[i].setBounds(position.x,position.y,100,100);
             label[i].setOpaque(true);
             label[i].setBackground(colors[i]);
-            jlyPane.add(label[i],JLayeredPane.PALETTE_LAYER,
-                    new Integer(101+i));
+//            jlyPane
+            jlyPane.add(label[i],new Integer(100+i));
         }
     }
     //Reference

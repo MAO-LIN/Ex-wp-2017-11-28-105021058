@@ -2,6 +2,8 @@ package new_Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UIpanel extends JPanel implements Runnable{
     private MainFrame mf;
@@ -15,6 +17,13 @@ public class UIpanel extends JPanel implements Runnable{
     private JButton jbtn1=new JButton("能力表");
     private JButton jbtn2=new JButton("幫助");
     private JButton jbtn3=new JButton("系統");
+    private JPanel jpHelp=new JPanel(new GridLayout(5,2));
+    private JLabel jlbHelp1=new JLabel("up");
+    private JLabel jlbHelp2=new JLabel("up");
+    private JLabel jlbHelp3=new JLabel("up");
+    private JLabel jlbHelp4=new JLabel("up");
+    private JLabel jlbHelp5=new JLabel("up");
+    private JPanel jpSystem=new JPanel(new GridLayout(4,1,5,5));
     public UIpanel(MainFrame mf){
         this.setLayout(new GridLayout(1,3,5,5));
         this.add(p1);
@@ -43,6 +52,18 @@ public class UIpanel extends JPanel implements Runnable{
         jbtn1.setFocusable(false);
         jbtn2.setFocusable(false);
         jbtn3.setFocusable(false);
+
+        //Help
+        jpHelp.add(jlbHelp1);
+        jpHelp.add(jlbHelp2);
+
+        //btn Listener
+        jbtn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,jpHelp,"幫助",JOptionPane.PLAIN_MESSAGE);
+            }
+        });
     }
 
     @Override

@@ -727,4 +727,7 @@ public class  MainFrame extends JFrame {
     public Map getMap(){
         return  this.map;
     }
+    public JLayeredPane getJlyPane(){
+        return jlyPane;
+    }
 }

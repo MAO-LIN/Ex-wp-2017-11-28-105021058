@@ -2,27 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fd1ccb0-0fe4-4359-a517-79933cadde33" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/jump/left/move.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/jump/left/move.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/jump/left/move.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/jump/right/move.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/jump/right/move.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/jump/right/move.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/stand/left/stand.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/stand/left/stand.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/stand/left/stand.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/stand/right/stand.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/stand/right/stand.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/stand/right/stand.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/walk/left/move.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/walk/left/move.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/walk/left/move.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/walk/right/move.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/walk/right/move.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/walk/right/move.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/new_Main/Mob.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/new_Main/Monster.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/new_Main/MonsterLocal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/BackgroundFloor.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/BackgroundFloor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$2.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/MainFrame$2.class" />
@@ -36,8 +15,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Obj.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Obj.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/UIpanel.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/UIpanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/MainFrame.java" afterPath="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/UIpanel.java" afterPath="$PROJECT_DIR$/src/new_Main/UIpanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -186,7 +163,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="212" />
     <option name="y" value="45" />
     <option name="width" value="1400" />
@@ -378,15 +355,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514799484346</updated>
-      <workItem from="1514799490028" duration="11953000" />
+      <workItem from="1514799490028" duration="11983000" />
     </task>
+    <task id="LOCAL-00001" summary="20180101 commit">
+      <created>1514822867218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1514822867218</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11953000" />
+    <option name="totallyTimeSpent" value="11983000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -423,6 +408,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="20180101 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180101 commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

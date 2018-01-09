@@ -20,6 +20,7 @@ public class  MainFrame extends JFrame {
     private JPanel centerP=new JPanel(new BorderLayout(5,5));
     private JLayeredPane jlyPane = new JLayeredPane();
     private UIpanel UIpane;
+    private Thread uipaneThread;
     private ArrayList<Character> charList = new ArrayList<Character>();
     private ArrayList<Thread> threadList = new ArrayList<Thread>();
     private JPanel backgroundP = new JPanel(new BorderLayout(0, 0));
@@ -71,7 +72,7 @@ public class  MainFrame extends JFrame {
     }
 
     private void initComp() {
-        this.setTitle("遊戲畫面");
+        this.setTitle("菜逼八的遊戲世界");
         charList.add(new Character("菜逼八",100,100,1,MainFrame.this));
         setCharAnimal(charList.get(0).getCharType());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -85,10 +86,6 @@ public class  MainFrame extends JFrame {
         cp=this.getContentPane();
         cp.add(centerP);
         centerP.add(jlyPane,BorderLayout.CENTER);
-        //UI介面
-        UIpane=new UIpanel(MainFrame.this);
-        centerP.add(UIpane,BorderLayout.SOUTH);
-        UIpane.setPreferredSize(new Dimension(1000,50));
 
         //重新focus this
 //        this.requestFocusInWindow();
@@ -103,6 +100,7 @@ public class  MainFrame extends JFrame {
         backgroundImg.setBounds(0,0,1000,600);
 //        character[0]=new JLabel(stand[3]);
         //deffault w:59 h:81
+
         //建立角色
 //        character[0].setBounds((450-59),420-300,84,81);
 //        map.setChar((450-59),420-300,84,81);
@@ -167,6 +165,13 @@ public class  MainFrame extends JFrame {
         charThread=new Thread(charList.get(0));
         charThread.start();
 
+        //UI介面
+        UIpane=new UIpanel(MainFrame.this);
+        centerP.add(UIpane,BorderLayout.SOUTH);
+        UIpane.setPreferredSize(new Dimension(1000,50));
+        uipaneThread=new Thread(UIpane);
+        uipaneThread.start();
+
         //建立 Monster
         UIpane.getJbtn1().addActionListener(new ActionListener() {
             @Override
@@ -185,6 +190,8 @@ public class  MainFrame extends JFrame {
 //        jlyPane.add(characterlb[1], JLayeredPane.PALETTE_LAYER,new Integer(102));
         //test
         map.printMap();
+//        UIpane.getJbtn1().getAction();
+
 
         walkT=new Timer(150, new ActionListener() {
             int t1Tmp=1;
@@ -243,7 +250,7 @@ public class  MainFrame extends JFrame {
 
             }
         });
-        attackT=new Timer(500, new ActionListener() {
+        attackT=new Timer(125, new ActionListener() {
             int t1Tmp=1;
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -475,14 +482,16 @@ public class  MainFrame extends JFrame {
 //                    backgroundLabel.setCharface("right");
                 }else if(key==KeyEvent.VK_Z){
                     charList.get(0).setAtt(true);
-                    standT.stop();
-                    attackT.start();
-                    if(charList.get(0).getCharface()==true){
-                        charList.get(0).setIcon(attack[0]);
-                    }else{
-                        charList.get(0).setIcon(attack[4]);
+                    if(!keyFlag) {
+                        standT.stop();
+                        attackT.start();
+                        if (charList.get(0).getCharface() == true) {
+                            charList.get(0).setIcon(attack[0]);
+                        } else {
+                            charList.get(0).setIcon(attack[4]);
+                        }
+                        keyFlag = true;
                     }
-                    keyFlag=true;
                 }
                 if(!keyFlag){
                     keyFlag = true;

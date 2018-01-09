@@ -30,6 +30,7 @@ public class Monster extends JPanel implements Runnable {
 //    private JLabel jlbHp=new JLabel("1000000");
     private int nowHp=45;
     private int maxHp=45;
+    private int attack=3;
     private JLabel jlbName=new JLabel("惡水靈");
 //    private  Dimension place = new Dimension(50,30);
    // private ImageIcon[][] imgIcon={{new ImageIcon("slimetest/slime1.png")},{new ImageIcon("slimetest/slime.png")}};
@@ -89,7 +90,7 @@ private  boolean Flag = true;
             this.Flag = false;
         }
        // this.setIcon(imgIcon[r][r1=rand.nextInt(1)]);
-       this.setBounds(x,y,84,96);//panel大小
+       this.setBounds(x,y,80,96);//panel大小
         jpgbarHp.setSize(84,10);
         jlb.setSize(84,91);
 //        jlb.setPreferredSize(new Dimension(84,101));
@@ -275,6 +276,9 @@ private  boolean Flag = true;
     public  int getImgWidth(){return imgW;}
     public int getImgHeight(){
         return imgH;
+    }
+    public int getAttack(){
+        return  attack;
     }
     public void setNowHp(int charAtt){
         nowHp=nowHp-charAtt;

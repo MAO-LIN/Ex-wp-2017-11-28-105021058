@@ -36,7 +36,7 @@ public class Map implements Runnable{
         }
     }
     public void setChar(int x,int y,int h,int w){
-        int startX=x/10;
+        int startX=x/10+mapDrawStart;
         int startY=y/10;
         for(int i=0;i<h/10;i++){
             for(int j=0;j<w/10;j++){
@@ -213,7 +213,7 @@ public class Map implements Runnable{
         }
     }
     public void removeChar(int x,int y, int h ,int w){
-        int startX=x/10;
+        int startX=x/10+mapDrawStart;
         int startY=y/10;
         for(int i=0;i<h/10;i++){
             for(int j=0;j<w/10;j++){

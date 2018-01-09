@@ -21,6 +21,8 @@ public class Monster extends JPanel implements Runnable {
     private ImageIcon jump[]=new ImageIcon[3];
     private ImageIcon walk[]=new ImageIcon[6];
     private ImageIcon stand[]=new ImageIcon[6];
+    private ImageIcon die[]=new ImageIcon[6];
+    private ImageIcon hit[]=new ImageIcon[2];
     private int mapstart;
     private JProgressBar jpgbarHp=new JProgressBar();
     private boolean up,down,right,left,att=false;
@@ -34,12 +36,16 @@ public class Monster extends JPanel implements Runnable {
 private  boolean Flag = true;
     private  Timer t1;
     private  Timer walkT;
-    private  Timer walk1;
+//    private  Timer walk1;
+    private  Timer dieT;
+    private  Timer hitT;
     private  Timer standT;
     private Random rand = new Random();
     // first
     private boolean firstFlag=true;
     private  Mob mob;
+    private MonsterHitThread msrHt;
+    private Thread msrTh;
 
     public Monster(int frmH, int frmW ,MainFrame mf){
         this.setLayout(new BorderLayout(5,5));
@@ -90,6 +96,11 @@ private  boolean Flag = true;
 //        jlbName.setSize(place);
         this.add(BorderLayout.NORTH,jpgbarHp);
         this.add(BorderLayout.CENTER,jlb);
+
+        //msr Thread
+        msrHt=new MonsterHitThread(Monster.this,mf);
+        msrTh=new Thread(msrHt);
+
 //        this.add(jlbName);
 
         //Timer
@@ -208,7 +219,9 @@ private  boolean Flag = true;
     }
     @Override
     public  void run(){
+        msrTh.start();
         t1.start();
+
     }
 
 
@@ -263,12 +276,19 @@ private  boolean Flag = true;
     public int getImgHeight(){
         return imgH;
     }
-    public  int getx(){
-        return x;
+    public void setNowHp(int charAtt){
+        nowHp=nowHp-charAtt;
+        jpgbarHp.setValue(nowHp);
     }
-    public int gety(){
-        return y;
+    public int getNocHp(){
+        return  nowHp;
     }
+//    public  int getx(){
+//        return x;
+//    }
+//    public int gety(){
+//        return y;
+//    }
         @Override
     protected  void paintComponent(Graphics g){
         Graphics2D g2d=(Graphics2D) g;

@@ -171,7 +171,7 @@ public class  MainFrame extends JFrame {
         UIpane.getJbtn1().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                monsterList.add(new Monster(700,3000,MainFrame.this));
+                monsterList.add(new Monster(700,1000,MainFrame.this));
                 jlyPane.add(monsterList.get(monsterList.size()-1), JLayeredPane.PALETTE_LAYER,87);
                 monsterThreadList.add(new Thread(monsterList.get(monsterList.size()-1)));
                 monsterThreadList.get(monsterThreadList.size()-1).start();
@@ -244,7 +244,7 @@ public class  MainFrame extends JFrame {
             }
         });
         attackT=new Timer(500, new ActionListener() {
-            int t1Tmp=0;
+            int t1Tmp=1;
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(charList.get(0).getCharface()==true){
@@ -475,6 +475,14 @@ public class  MainFrame extends JFrame {
 //                    backgroundLabel.setCharface("right");
                 }else if(key==KeyEvent.VK_Z){
                     charList.get(0).setAtt(true);
+                    standT.stop();
+                    attackT.start();
+                    if(charList.get(0).getCharface()==true){
+                        charList.get(0).setIcon(attack[0]);
+                    }else{
+                        charList.get(0).setIcon(attack[4]);
+                    }
+                    keyFlag=true;
                 }
                 if(!keyFlag){
                     keyFlag = true;

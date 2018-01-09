@@ -22,6 +22,7 @@ public class Character extends JLabel implements Runnable{
     private Point local;
     private int charType;
     private int lv=1;
+    private int charAttack=5;
     private String nowC="stand";
     //Animal Timer
     private Timer walkT;
@@ -142,6 +143,12 @@ public class Character extends JLabel implements Runnable{
     }
     public void setLv(int lv){this.lv = lv;}
     public int getLv(){return lv;}
+    public void setCharAttack(int att){
+        this.charAttack=att;
+    }
+    public int getCharAttack(){
+        return charAttack;
+    }
 
     @Override
     public void run() {

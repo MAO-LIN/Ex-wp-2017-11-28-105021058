@@ -26,6 +26,7 @@ public class UIpanel extends JPanel implements Runnable{
     private JPanel jpSystem=new JPanel(new GridLayout(4,1,5,5));
     public UIpanel(MainFrame mf){
         this.setLayout(new GridLayout(1,3,5,5));
+        this.mf=mf;
         this.add(p1);
         this.add(p2);
         this.add(p3);
@@ -69,9 +70,9 @@ public class UIpanel extends JPanel implements Runnable{
     @Override
     public void run() {
         while(true){
-            mf.getchar();
+            jpgbarHp.setValue(mf.getchar().getNowHp());
             try {
-                Thread.sleep(5);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

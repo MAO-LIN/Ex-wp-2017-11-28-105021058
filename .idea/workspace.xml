@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0baa11c-f0d2-4c60-aa0a-e9354b95647c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/left/die.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/left/die.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/left/die.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/left/die.3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/left/hit.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/right/die.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/right/die.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/right/die.2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/right/die.3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Slime/die/right/hit.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/new_Main/MonsterHitThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/LayeredPane_Test/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/untitled104/LayeredPane_Test/MainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/BackgroundFloor.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/BackgroundFloor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Character.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Character.class" />
@@ -26,11 +15,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Monster$3.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Monster$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/untitled104/new_Main/Monster.class" afterPath="$PROJECT_DIR$/out/production/untitled104/new_Main/Monster.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/BackgroundFloor.java" afterPath="$PROJECT_DIR$/src/new_Main/BackgroundFloor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/Character.java" afterPath="$PROJECT_DIR$/src/new_Main/Character.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/MainFrame.java" afterPath="$PROJECT_DIR$/src/new_Main/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/Map.java" afterPath="$PROJECT_DIR$/src/new_Main/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/new_Main/Monster.java" afterPath="$PROJECT_DIR$/src/new_Main/Monster.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +64,8 @@
       <file leaf-file-name="Monster.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/new_Main/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="252">
+              <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
               <folding>
                 <element signature="e#7958#7959#0" expanded="true" />
                 <element signature="e#7987#7988#0" expanded="true" />
@@ -374,16 +358,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515425192999</updated>
-      <workItem from="1515425194747" duration="5819000" />
+      <workItem from="1515425194747" duration="5849000" />
     </task>
+    <task id="LOCAL-00001" summary="20170108_commit">
+      <created>1515456867477</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515456867478</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5819000" />
+    <option name="totallyTimeSpent" value="5849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="324" y="59" width="1400" height="990" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -394,7 +385,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29777256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29777256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -419,6 +410,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="20170108_commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170108_commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -490,8 +485,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_Main/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="252">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
           <folding>
             <element signature="e#7958#7959#0" expanded="true" />
             <element signature="e#7987#7988#0" expanded="true" />

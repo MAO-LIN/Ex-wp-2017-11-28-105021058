@@ -21,7 +21,7 @@ public class Monster extends JPanel implements Runnable {
     private ImageIcon jump[]=new ImageIcon[3];
     private ImageIcon walk[]=new ImageIcon[6];
     private ImageIcon stand[]=new ImageIcon[6];
-    private ImageIcon die[]=new ImageIcon[6];
+    private ImageIcon die[]=new ImageIcon[8];
     private ImageIcon hit[]=new ImageIcon[2];
     private int mapstart;
     private JProgressBar jpgbarHp=new JProgressBar();
@@ -129,7 +129,7 @@ private  boolean Flag = true;
                     //   Monster.this.repaint();
                 } else {
 
-                    if ((x+jlb.getIcon().getIconWidth()+20-mapstart*10)<frmW) {
+                    if ((x+jlb.getIcon().getIconWidth()+20-mapstart*10)<getFrmW()) {
                         //向右
                         jlb.setIcon(walk[t1Tmp % 3+3]);
 
@@ -263,6 +263,14 @@ private  boolean Flag = true;
             stand[i]=new ImageIcon("Slime/stand/right/stand."+Integer.toString(i-3)+".png");
 
         }
+        for(int  i=0;i<4;i++) {
+            die[i]=new ImageIcon("Slime/die/right/die."+Integer.toString(i)+".png");
+        }
+        for(int  i=4;i<8;i++) {
+            die[i]=new ImageIcon("Slime/die/left/die."+Integer.toString(i-4)+".png");
+        }
+        hit[0]=new ImageIcon("Slime/die/right/hit.0.png");
+        hit[1]=new ImageIcon("Slime/die/right/hit.0.png");
 
 
     }
@@ -284,6 +292,12 @@ private  boolean Flag = true;
         nowHp=nowHp-charAtt;
         jpgbarHp.setValue(nowHp);
     }
+    public JLabel getJlb(){
+        return jlb;
+    }
+    public ImageIcon getHit(int index) {
+        return hit[index];
+    }
     public int getNocHp(){
         return  nowHp;
     }
@@ -298,6 +312,29 @@ private  boolean Flag = true;
         Graphics2D g2d=(Graphics2D) g;
         super.paintComponent(g);
         g2d.drawImage(image,0,0,null);
+    }
+    public Timer getT1(){
+        return t1;
+    }
+    public Timer getWalkT(){
+        return t1;
+    }
+    public Timer getStandT(){
+        return t1;
+    }
+
+    public int getTmpX(){
+        return x;
+    }
+    public void setTmpX(int x1){
+        this.x=x1;
+    }
+
+    public MainFrame getMf() {
+        return mf;
+    }
+    public int getFrmW(){
+        return frmW;
     }
 }
 

@@ -9,172 +9,248 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Character extends JLabel implements Runnable{
-    private ImageIcon alert[]=new ImageIcon[6];
-    private ImageIcon jump[]=new ImageIcon[2];
-    private ImageIcon walk[]=new ImageIcon[8];
-    private ImageIcon stand[]=new ImageIcon[6];
-    private ImageIcon attack[]=new ImageIcon[8];
+public class Character extends JLabel implements Runnable {
+    //    private ImageIcon alert[]=new ImageIcon[6];
+//    private ImageIcon jump[]=new ImageIcon[2];
+//    private ImageIcon walk[]=new ImageIcon[8];
+//    private ImageIcon stand[]=new ImageIcon[6];
+//    private ImageIcon attack[]=new ImageIcon[8];
     //deffault
     private String id;
-    private int nowHp,maxHp,nowMp,maxMp;
-    private boolean charface=false;
+    private int nowHp, maxHp, nowMp, maxMp;
+    private boolean charface = false;
     private Point local;
     private int charType;
-    private int lv=1;
-    private int charAttack=5;
-    private String nowC="stand";
+    private int lv = 1;
+    private int charAttack = 5;
+    private String nowC = "stand";
+    private Timer hitT;
     //Animal Timer
-    private Timer walkT;
-    private Timer standT;
-    private Timer jumpT;
-    private Timer jumpRLT;
-    private Timer attackT;
-    private Timer dropT;
+//    private Timer walkT;
+//    private Timer standT;
+//    private Timer jumpT;
+//    private Timer jumpRLT;
+//    private Timer attackT;
+//    private Timer dropT;
+
     //Animal Timer tmp
     private int t1Tmp;
     private new_Main.MainFrame mf;
 
-    private boolean right ,left,up,down,att=false;
+    //CharacterT
+    private CharacterT charT;
+    private Thread charTthread;
 
-    public Character(String id, int nowHp, int maxHp, int charType,new_Main.MainFrame mf){
-        this.id=id;
-        this.nowHp=nowHp;
-        this.maxHp=maxHp;
+    private boolean right, left, up, down, att ,hit= false;
+
+    public Character(String id, int nowHp, int maxHp, int charType, new_Main.MainFrame mf) {
+        this.id = id;
+        this.nowHp = nowHp;
+        this.maxHp = maxHp;
 //        this.charface=charface;
         //角色面方向
 //        this.local=local;
         //位置
-        this.charType=charType;
+        this.charType = charType;
         //哪隻角色
 //        this.nowC=nowC;
         //正在使用的指令
-        setCharAnimal(charType);
-        setIcon(stand[3]);
-        this.mf =mf;
-        maxHp=100;
-        nowHp=100;
-        maxMp=50;
-        nowMp=50;
-    }
-    public void setId(String id){
-        this.id=id;
+//        setCharAnimal(charType);
+//        setIcon(stand[3]);
+        this.mf = mf;
+
+        //CharacterT
+        charT = new CharacterT(Character.this, mf);
+        charTthread = new Thread(charT);
+
+        maxHp = 100;
+        nowHp = 100;
+        maxMp = 50;
+        nowMp = 50;
+
+        hitT=new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(getCharactor().getCharface()) {
+                    getCharactor().setIcon(new ImageIcon("NewCharacter/Character01/hit/left/alert_0.png"));
+                }else{
+                    getCharactor().setIcon(new ImageIcon("NewCharacter/Character01/hit/right/alert_0.png"));
+                }
+                setHit(false);
+                hitT.stop();
+            }
+        });
     }
 
-    public String getid(){
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getid() {
         return id;
     }
-    public void setNowHp(int nowHp){
-        this.nowHp=nowHp;
+
+    public void setNowHp(int nowHp) {
+        this.nowHp = nowHp;
     }
 
-    public int getNowHp(){
+    public int getNowHp() {
         return nowHp;
     }
-    public void setMaxHp(int maxHp){
-        this.maxHp=maxHp;
+
+    public void setMaxHp(int maxHp) {
+        this.maxHp = maxHp;
     }
 
-    public int getMaxHp(){
+    public int getMaxHp() {
         return maxHp;
     }
-    public void setNowMp(int nowMp){
-        this.nowHp=nowMp;
+
+    public void setNowMp(int nowMp) {
+        this.nowHp = nowMp;
     }
-    public int getNowMp(){
+
+    public int getNowMp() {
         return nowMp;
     }
-    public void setMaxMp(int nowMp){
-        this.nowHp=nowMp;
+
+    public void setMaxMp(int nowMp) {
+        this.nowHp = nowMp;
     }
-    public int getMaxMp(){
+
+    public int getMaxMp() {
         return maxMp;
     }
 
-    public void setCharface(boolean charface){
-        this.charface=charface;
+    public void setCharface(boolean charface) {
+        this.charface = charface;
     }
 
-    public boolean getCharface(){
+    public boolean getCharface() {
         return charface;
     }
-    public void setLocal(Point local){
-        this.local=local;
+
+    public void setLocal(Point local) {
+        this.local = local;
     }
-    public Point getLocal(){
+
+    public Point getLocal() {
         return local;
     }
-    public void setCharType(int charType){
-        this.charType=charType;
+
+    public void setCharType(int charType) {
+        this.charType = charType;
     }
-    public int getCharType(){
+
+    public int getCharType() {
         return charType;
     }
-    public String getNowC(){
+
+    public String getNowC() {
         return nowC;
     }
 
-    public void setUp(boolean upFlag){
-        this.up=upFlag;
+    public void setUp(boolean upFlag) {
+        this.up = upFlag;
     }
-    public boolean getUp(){
+
+    public boolean getUp() {
         return up;
     }
-    public void setDown(boolean downFlag){
-        this.down=downFlag;
+
+    public void setDown(boolean downFlag) {
+        this.down = downFlag;
     }
-    public boolean getDown(){
+
+    public boolean getDown() {
         return down;
     }
-    public void setRight(boolean rightFlag){
-        this.right=rightFlag;
+
+    public void setRight(boolean rightFlag) {
+        this.right = rightFlag;
     }
-    public boolean getRight(){
+
+    public boolean getRight() {
         return right;
     }
-    public void setLeft(boolean leftFlag){
-        this.left=leftFlag;
+
+    public void setLeft(boolean leftFlag) {
+        this.left = leftFlag;
     }
-    public boolean getLeft(){
+
+    public boolean getLeft() {
         return left;
     }
-    public void setAtt(boolean attFlag){
-        this.att=attFlag;
+
+    public void setAtt(boolean attFlag) {
+        this.att = attFlag;
     }
-    public void setLv(int lv){this.lv = lv;}
-    public int getLv(){return lv;}
-    public void setCharAttack(int att){
-        this.charAttack=att;
+
+    public void setLv(int lv) {
+        this.lv = lv;
     }
-    public int getCharAttack(){
+
+    public int getLv() {
+        return lv;
+    }
+    public boolean getHit(){
+        return hit;
+    }
+    public void setHit(boolean hit1){
+        this.hit=hit1;
+    }
+    public Character getCharactor(){
+        return Character.this;
+    }
+
+    public void setCharAttack(int att) {
+        this.charAttack = att;
+    }
+
+    public int getCharAttack() {
         return charAttack;
     }
 
     @Override
     public void run() {
-        while(true){
-            if(up==true){
+        charTthread.start();
+        while (true) {
+            if(hit){
+                mf.setNowC("hit");
+                hitT.start();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else if (up && right) {
+                mf.setNowC("Rup");
+                charface = false;
+            } else if (up && left) {
+                mf.setNowC("Lup");
+                charface = true;
+            } else if (up == true) {
 //                System.out.println("up");
                 mf.setNowC("up");
-            }else if(down==true){
+            } else if (down == true) {
 //                System.out.println("down");
                 mf.setNowC("down");
-                nowC="down";
-            }else if(right==true){
+                nowC = "down";
+            } else if (right == true) {
 //                System.out.println("right");
                 mf.setNowC("right");
-                charface=false;
-                nowC="right";
-            }else if(left==true){
+                charface = false;
+                nowC = "right";
+            } else if (left == true) {
 //                System.out.println("left");
-                charface=true;
+                charface = true;
                 mf.setNowC("left");
-                nowC="left";
-            }else if(att==true){
+                nowC = "left";
+            } else if (att == true) {
 //                System.out.printf("att");
                 mf.setNowC("att");
-                nowC="att";
-            }else{
+                nowC = "att";
+            } else {
                 mf.setNowC("stand");
             }
             try {
@@ -184,45 +260,45 @@ public class Character extends JLabel implements Runnable{
             }
         }
     }
-    private void setCharAnimal(int charType) {
-        for (int i = 0; i < 3; i++) {
-            alert[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/alert/left/alert_" + Integer.toString(i) + ".png");
-//            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/alert/left/alert_"+Integer.toString(i)+".png");
-        }
-//        System.out.println("NewCharacter/Character01/alert/left");
-        for (int i = 3; i < 6; i++) {
-            alert[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/alert/right/alert_" + Integer.toString(i - 3) + ".png");
-        }
-
-        for (int i = 0; i < 4; i++) {
-            walk[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/walk/left/walk1_" + Integer.toString(i) + ".png");
-        }
-
-        for (int i = 4; i < 8; i++) {
-            walk[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/walk/right/walk1_" + Integer.toString(i - 4) + ".png");
-        }
-        jump[0] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/jump/left/jump_" + Integer.toString(0) + ".png");
-        jump[1] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/jump/right/jump_" + Integer.toString(0) + ".png");
-
-        for (int i = 0; i < 3; i++) {
-            stand[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/stand/left/stand1_" + Integer.toString(i) + ".png");
-//            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/stand/left/stand1_"+Integer.toString(i)+".png");
-        }
-//        System.out.println("NewCharacter/Character01/stand/left");
-        for (int i = 3; i < 6; i++) {
-            stand[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/stand/right/stand1_" + Integer.toString(i - 3) + ".png");
-        }
-        for (int i = 0; i < 2; i++) {
-            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/left/stabO1_" + Integer.toString(i) + ".png");
-        }
-        for (int i = 2; i < 4; i++) {
-            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/left/stabO2_" + Integer.toString(i - 2) + ".png");
-        }
-        for (int i = 4; i < 6; i++) {
-            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/right/stabO1_" + Integer.toString(i - 4) + ".png");
-        }
-        for (int i = 6; i < 8; i++) {
-            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/right/stabO2_" + Integer.toString(i - 6) + ".png");
-        }
-    }
+//    private void setCharAnimal(int charType) {
+//        for (int i = 0; i < 3; i++) {
+//            alert[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/alert/left/alert_" + Integer.toString(i) + ".png");
+////            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/alert/left/alert_"+Integer.toString(i)+".png");
+//        }
+////        System.out.println("NewCharacter/Character01/alert/left");
+//        for (int i = 3; i < 6; i++) {
+//            alert[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/alert/right/alert_" + Integer.toString(i - 3) + ".png");
+//        }
+//
+//        for (int i = 0; i < 4; i++) {
+//            walk[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/walk/left/walk1_" + Integer.toString(i) + ".png");
+//        }
+//
+//        for (int i = 4; i < 8; i++) {
+//            walk[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/walk/right/walk1_" + Integer.toString(i - 4) + ".png");
+//        }
+//        jump[0] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/jump/left/jump_" + Integer.toString(0) + ".png");
+//        jump[1] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/jump/right/jump_" + Integer.toString(0) + ".png");
+//
+//        for (int i = 0; i < 3; i++) {
+//            stand[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/stand/left/stand1_" + Integer.toString(i) + ".png");
+////            System.out.println("NewCharacter/Character0"+Integer.toString(charType)+"/stand/left/stand1_"+Integer.toString(i)+".png");
+//        }
+////        System.out.println("NewCharacter/Character01/stand/left");
+//        for (int i = 3; i < 6; i++) {
+//            stand[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/stand/right/stand1_" + Integer.toString(i - 3) + ".png");
+//        }
+//        for (int i = 0; i < 2; i++) {
+//            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/left/stabO1_" + Integer.toString(i) + ".png");
+//        }
+//        for (int i = 2; i < 4; i++) {
+//            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/left/stabO2_" + Integer.toString(i - 2) + ".png");
+//        }
+//        for (int i = 4; i < 6; i++) {
+//            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/right/stabO1_" + Integer.toString(i - 4) + ".png");
+//        }
+//        for (int i = 6; i < 8; i++) {
+//            attack[i] = new ImageIcon("NewCharacter/Character0" + Integer.toString(charType) + "/attack/right/stabO2_" + Integer.toString(i - 6) + ".png");
+//        }
+//    }
 }

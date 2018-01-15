@@ -42,8 +42,11 @@ public class SkyPane extends JPanel implements Runnable{
         if(x<=0){
             g2d.drawImage(image,700+x,y,700, 300,this);
         }
+        if(x<=0){
+            g2d.drawImage(image,1400+x,y,700, 300,this);
+        }
         g2d.drawImage(image,x,y,700, 300,this);
-        if(x<=-700){
+        if(x<=-800){
             x=0;
         }
     }

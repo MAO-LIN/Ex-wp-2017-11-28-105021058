@@ -76,7 +76,7 @@ public class  MainFrame extends JFrame {
         charList.add(new Character("菜逼八",100,100,1,MainFrame.this));
         setCharAnimal(charList.get(0).getCharType());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setBounds(200, 200, 1000, 700);
+        this.setBounds(200, 200, 1600, 700);
         //物件碰撞判斷陣列
         map=new Map(3000,600);
         //test
@@ -91,13 +91,13 @@ public class  MainFrame extends JFrame {
 //        this.requestFocusInWindow();
 
         ImageIcon imgTmp =new ImageIcon("backgroundCG.png");
-        imgTmp.setImage(imgTmp.getImage().getScaledInstance(1000,600,Image.SCALE_DEFAULT));
+        imgTmp.setImage(imgTmp.getImage().getScaledInstance(1600,600,Image.SCALE_DEFAULT));
         backgroundImg.setIcon(imgTmp);
         jlyPane = getLayeredPane();
         backgroundP.add(backgroundImg);
 //        backgroundImg.setBackground(new Color(239, 255, 175));
         backgroundImg.setOpaque(true);
-        backgroundImg.setBounds(0,0,1000,600);
+        backgroundImg.setBounds(0,0,1600,600);
 //        character[0]=new JLabel(stand[3]);
         //deffault w:59 h:81
 
@@ -121,21 +121,21 @@ public class  MainFrame extends JFrame {
 //        map.setObj((450-59+120),420,80,50);
 
         //建立平台
-        jlyPane.add(lb, JLayeredPane.PALETTE_LAYER,new Integer(101));
-        lb.setBounds(200,300,400,50);
-        lb.setBackground(new Color(164, 94, 26));
-        lb.setOpaque(true);
-        lbThread=new Thread(lb);
-        lbThread.start();
+//        jlyPane.add(lb, JLayeredPane.PALETTE_LAYER,new Integer(101));
+//        lb.setBounds(200,300,400,50);
+//        lb.setBackground(new Color(164, 94, 26));
+//        lb.setOpaque(true);
+//        lbThread=new Thread(lb);
+//        lbThread.start();
 //        map.setObj(200,300,50,400);
 
         //建立平台
-        jlyPane.add(lb2, JLayeredPane.PALETTE_LAYER,new Integer(101));
-        lb2.setBounds(900,250,400,50);
-        lb2.setBackground(new Color(84, 164, 126));
-        lb2.setOpaque(true);
-        lbThread=new Thread(lb2);
-        lbThread.start();
+//        jlyPane.add(lb2, JLayeredPane.PALETTE_LAYER,new Integer(101));
+//        lb2.setBounds(900,250,400,50);
+//        lb2.setBackground(new Color(84, 164, 126));
+//        lb2.setOpaque(true);
+//        lbThread=new Thread(lb2);
+//        lbThread.start();
 
         //建立地板
         jlyPane.add(backgroundLabel, JLayeredPane.PALETTE_LAYER,102);
@@ -144,9 +144,9 @@ public class  MainFrame extends JFrame {
 //        floorlb.setIcon(new ImageIcon("floor2.png"));
 //        floorlb.setOpaque(true);
         backgroundLabel.setOpaque(false);
-        backgroundLabel.setBounds(0,470,1000,130);
-        Thread bgThread=new Thread(backgroundLabel);
-        bgThread.start();
+        backgroundLabel.setBounds(0,470,1600,130);
+//        Thread bgThread=new Thread(backgroundLabel);
+//        bgThread.start();
 
         //建立Sky
 //        testPane.setBounds(0,0,100,600);
@@ -157,7 +157,7 @@ public class  MainFrame extends JFrame {
         threadList.add(new Thread(skyp));
         threadList.get(0).start();
         skyp.setOpaque(false);
-        skyp.setBounds(0,0,1000,300);
+        skyp.setBounds(0,0,1600,300);
 //        testPane.setBackground(new Color(255, 69, 154));
         jlyPane.add(skyp, JLayeredPane.PALETTE_LAYER,101);
 
@@ -168,7 +168,7 @@ public class  MainFrame extends JFrame {
         //UI介面
         UIpane=new UIpanel(MainFrame.this);
         centerP.add(UIpane,BorderLayout.SOUTH);
-        UIpane.setPreferredSize(new Dimension(1000,50));
+        UIpane.setPreferredSize(new Dimension(1600,50));
         uipaneThread=new Thread(UIpane);
         uipaneThread.start();
 
@@ -176,14 +176,14 @@ public class  MainFrame extends JFrame {
         UIpane.getJbtn1().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                monsterList.add(new Monster(700,1000,MainFrame.this));
+                monsterList.add(new Monster(700,1600,MainFrame.this));
                 jlyPane.add(monsterList.get(monsterList.size()-1), JLayeredPane.PALETTE_LAYER,87);
                 monsterThreadList.add(new Thread(monsterList.get(monsterList.size()-1)));
                 monsterThreadList.get(monsterThreadList.size()-1).start();
 
-                monsterLocalList.add(new MonsterLocal(monsterList.get(monsterList.size()-1),MainFrame.this));
-                monsterLocalThreadList.add(new Thread(monsterLocalList.get(monsterLocalList.size()-1)));
-                monsterLocalThreadList.get(monsterLocalThreadList.size()-1).start();
+//                monsterLocalList.add(new MonsterLocal(monsterList.get(monsterList.size()-1),MainFrame.this));
+//                monsterLocalThreadList.add(new Thread(monsterLocalList.get(monsterLocalList.size()-1)));
+//                monsterLocalThreadList.get(monsterLocalThreadList.size()-1).start();
             }
         });
 
@@ -405,12 +405,12 @@ public class  MainFrame extends JFrame {
                     }
 //                    keyFlag=true;
                     System.out.println("("+charList.get(0).getX()+","+charList.get(0).getY()+")");
-                    standT.start();
+//                    standT.start();
                 }
             }
         });
        // 遊戲一開始的配置動畫
-        standT.start();
+//        standT.start();
         if(map.charDropCheck(charList.get(0).getX(),charList.get(0).getY())){
             standT.stop();
             dropT.start();
@@ -420,11 +420,13 @@ public class  MainFrame extends JFrame {
                 charList.get(0).setIcon(jump[1]);
             }
         }
-
         this.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
+
+
             }
+
             @Override
             public void keyPressed(KeyEvent e) {
                 int key = e.getKeyCode();
@@ -432,245 +434,144 @@ public class  MainFrame extends JFrame {
                     charList.get(0).setDown(true);
                 }else if(key==KeyEvent.VK_SPACE){
                     charList.get(0).setUp(true);
-                    if(!keyFlag){
-                        System.out.println("Space");
-                        if (charList.get(0).getCharface()) {
-                            charList.get(0).setIcon(jump[0]);
-                        } else {
-                            charList.get(0).setIcon(jump[1]);
-                        }
-                        standT.stop();
-                        jumpT.restart();
-                    }
-                }else if(key==KeyEvent.VK_LEFT){
-                    charList.get(0).setLeft(true);
-                    if(!keyFlag){
-                        if (map.setWalkCheck(charList.get(0).getX(), charList.get(0).getY(), 84,81,true)) {
-                            charList.get(0).setCharface(true);
-                            map.removeChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
-//                            charList.get(0).setLocation(charList.get(0).getX() + 10, charList.get(0).getY());
-                            map.setChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
-                            charList.get(0).setIcon(walk[0]);
-                            standT.stop();
-                            if(!map.charDropCheck(charList.get(0).getX(),charList.get(0).getY())) {
-                                walkT.start();
-                            }else{
-                                dropT.start();
-                            }
-                            keyFlag = true;
-                        }
-                    }
-//                    backgroundLabel.setCharface("left");
                 }else if(key==KeyEvent.VK_RIGHT){
                     charList.get(0).setRight(true);
-                    if(!keyFlag){
-                        if (map.setWalkCheck(charList.get(0).getX(),charList.get(0).getY(), 84,81,false)) {
-                            charList.get(0).setCharface(false);
-                            map.removeChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
-//                            charList.get(0).setLocation(charList.get(0).getX() + 10, charList.get(0).getY());
-                            map.setChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
-                            charList.get(0).setIcon(walk[4]);
-                            standT.stop();
-                            if(!map.charDropCheck(charList.get(0).getX(),charList.get(0).getY())) {
-                                walkT.start();
-                            }else{
-                                dropT.start();
-                            }
-                            keyFlag = true;
-                        }
-                    }
-//                    backgroundLabel.setCharface("right");
+                }else if(key==KeyEvent.VK_LEFT){
+                    charList.get(0).setLeft(true);
                 }else if(key==KeyEvent.VK_Z){
                     charList.get(0).setAtt(true);
-                    if(!keyFlag) {
-                        standT.stop();
-                        attackT.start();
-                        if (charList.get(0).getCharface() == true) {
-                            charList.get(0).setIcon(attack[0]);
-                        } else {
-                            charList.get(0).setIcon(attack[4]);
-                        }
-                        keyFlag = true;
-                    }
-                }
-                if(!keyFlag){
-                    keyFlag = true;
                 }
 
             }
-//            @Override
+
+            @Override
             public void keyReleased(KeyEvent e) {
                 int key = e.getKeyCode();
                 if (key == KeyEvent.VK_DOWN) {
                     charList.get(0).setDown(false);
                 }else if(key==KeyEvent.VK_SPACE){
                     charList.get(0).setUp(false);
-                }else if(key==KeyEvent.VK_LEFT){
-                    if (keyFlag) {
-                        charList.get(0).setIcon(stand[0]);
-                        standT.restart();
-                        walkT.stop();
-                        keyFlag = true;
-//                        System.out.println("Left_false");
-                    }
-                    charList.get(0).setLeft(false);
                 }else if(key==KeyEvent.VK_RIGHT){
                     charList.get(0).setRight(false);
-                    if (keyFlag) {
-                        charList.get(0).setIcon(stand[3]);
-                        standT.restart();
-                        walkT.stop();
-                        keyFlag = false;
-                    }
-                }else if(key==KeyEvent.VK_Z){
-                    charList.get(0).setAtt(false);
+                }else if(key==KeyEvent.VK_LEFT){
+                    charList.get(0).setLeft(false);
                 }
-                if(keyFlag){
-                    keyFlag = false;
-                }
-
+//                else if(key==KeyEvent.VK_Z){
+//                    charList.get(0).setAtt(false);
+//                }
             }
+        });
+
+//        this.addKeyListener(new KeyListener() {
+//            @Override
+//            public void keyTyped(KeyEvent e) {
+//            }
 //            @Override
 //            public void keyPressed(KeyEvent e) {
 //                int key = e.getKeyCode();
-//                if(timeFlag==false) {
-//                    if (right == true && key == KeyEvent.VK_SPACE || left == true && key == KeyEvent.VK_SPACE) {
-//                        if (right == true) {
-//                            System.out.println("right jump");
-//                            if(walkFlag==true){
-//                                walkT.stop();
-//                                walkFlag=false;
-//                            }
-//                            character[0].setIcon(jump[1]);
-//                            jumpRLT.start();
-//
+//                if (key == KeyEvent.VK_DOWN) {
+//                    charList.get(0).setDown(true);
+//                }else if(key==KeyEvent.VK_SPACE){
+//                    charList.get(0).setUp(true);
+//                    if(!keyFlag){
+//                        System.out.println("Space");
+//                        if (charList.get(0).getCharface()) {
+//                            charList.get(0).setIcon(jump[0]);
 //                        } else {
-//                            System.out.println("left jump");
+//                            charList.get(0).setIcon(jump[1]);
 //                        }
-//                        if (keyFlag == false) {
+//                        standT.stop();
+//                        jumpT.restart();
+//                    }
+//                }else if(key==KeyEvent.VK_LEFT){
+//                    charList.get(0).setLeft(true);
+//                    if(!keyFlag){
+//                        if (map.setWalkCheck(charList.get(0).getX(), charList.get(0).getY(), 84,81,true)) {
+//                            charList.get(0).setCharface(true);
+//                            map.removeChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
+////                            charList.get(0).setLocation(charList.get(0).getX() + 10, charList.get(0).getY());
+//                            map.setChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
+//                            charList.get(0).setIcon(walk[0]);
+//                            standT.stop();
+//                            if(!map.charDropCheck(charList.get(0).getX(),charList.get(0).getY())) {
+//                                walkT.start();
+//                            }else{
+//                                dropT.start();
+//                            }
 //                            keyFlag = true;
 //                        }
-//                    } else {
-//
-//                        if (key == KeyEvent.VK_DOWN) {
-//
-//                            down = true;
-//
-//                        } else if (key == KeyEvent.VK_SPACE) {
-//                            up = true;
-//                            if (keyFlag == false) {
-////                            System.out.println("Space");
-//                                if (charList.get(0).getCharface() == true) {
-//                                    character[0].setIcon(jump[0]);
-//                                } else {
-//                                    character[0].setIcon(jump[1]);
-//                                }
-//                                standT.stop();
-//                                jumpT.restart();
-//                                keyFlag = true;
+//                    }
+////                    backgroundLabel.setCharface("left");
+//                }else if(key==KeyEvent.VK_RIGHT){
+//                    charList.get(0).setRight(true);
+//                    if(!keyFlag){
+//                        if (map.setWalkCheck(charList.get(0).getX(),charList.get(0).getY(), 84,81,false)) {
+//                            charList.get(0).setCharface(false);
+//                            map.removeChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
+////                            charList.get(0).setLocation(charList.get(0).getX() + 10, charList.get(0).getY());
+//                            map.setChar(charList.get(0).getX(),charList.get(0).getY(),84,81);
+//                            charList.get(0).setIcon(walk[4]);
+//                            standT.stop();
+//                            if(!map.charDropCheck(charList.get(0).getX(),charList.get(0).getY())) {
+//                                walkT.start();
+//                            }else{
+//                                dropT.start();
 //                            }
-//                        } else if (key == KeyEvent.VK_RIGHT) {
-//                            right = true;
-//                            if (keyFlag == false) {
-//                                if (map.setWalkCheck(character[0].getX(), character[0].getY(), 84,81,false) == true) {
-//                                    charList.get(0).setCharface(false);
-//                                    map.removeChar(character[0].getX(),character[0].getY(),84,81);
-//                                    character[0].setLocation(character[0].getX() + 10, character[0].getY());
-//                                    map.setChar(character[0].getX(),character[0].getY(),84,81);
-//                                    character[0].setIcon(walk[4]);
-//                                    standT.stop();
-//                                    if(map.charDropCheck(character[0].getX(),character[0].getY())==false) {
-//                                        walkT.start();
-//                                    }else{
-//                                        dropT.start();
-//                                    }
-//                                    keyFlag = true;
-//                                }
-//                            }
-//                        } else if (key == KeyEvent.VK_LEFT) {
-//                            left = true;
-//                            if (keyFlag == false) {
-//                                if (map.setWalkCheck(character[0].getX(), character[0].getY(), 84,81,true) == true) {
-//                                    charList.get(0).setCharface(true);
-//                                    map.removeChar(character[0].getX(),character[0].getY(),84,81);
-//                                    character[0].setLocation(character[0].getX() - 10, character[0].getY());
-//                                    map.setChar(character[0].getX(),character[0].getY(),84,81);
-//                                    character[0].setIcon(walk[0]);
-//                                    standT.stop();
-//                                    if(map.charDropCheck(character[0].getX(),character[0].getY())==false) {
-//                                        walkT.start();
-//                                    }else{
-//                                        dropT.start();
-//                                    }
-//                                    keyFlag = true;
-//                                }
-//                            }
-//                        } else if (key == KeyEvent.VK_Z) {
-//                            att = true;
-//                            if (keyFlag == false) {
-//                                standT.stop();
-//                                attackT.start();
-//                                keyFlag = true;
-//                            }
+//                            keyFlag = true;
 //                        }
 //                    }
+////                    backgroundLabel.setCharface("right");
+//                }else if(key==KeyEvent.VK_Z){
+//                    charList.get(0).setAtt(true);
+//                    if(!keyFlag) {
+//                        standT.stop();
+//                        attackT.start();
+//                        if (charList.get(0).getCharface() == true) {
+//                            charList.get(0).setIcon(attack[0]);
+//                        } else {
+//                            charList.get(0).setIcon(attack[4]);
+//                        }
+//                        keyFlag = true;
+//                    }
 //                }
+//                if(!keyFlag){
+//                    keyFlag = true;
+//                }
+//
 //            }
-
-//            @Override
+////            @Override
 //            public void keyReleased(KeyEvent e) {
 //                int key = e.getKeyCode();
-//                if (timeFlag==false) {
-//                    if (key == KeyEvent.VK_DOWN) {
-//                        down = false;
-//                        if (keyFlag == true) {
-//
-//                            keyFlag = false;
-//                        }
-//                    } else if (key == KeyEvent.VK_SPACE) {
-//                        up = false;
-//                        if (keyFlag == true) {
-////                        if(charList.get(0).getCharface()==true){
-////                            character[0].setIcon(stand[0]);
-////                        }else{
-////                            character[0].setIcon(stand[3]);
-////                        }
-////                        jumpT.stop();
-////                        standT.start();
-////                            System.out.println("SpaceEnd");
-//                        }
-//                    } else if (key == KeyEvent.VK_RIGHT) {
-//                        right = false;
-//                        walkFlag=false;
-//                        if (keyFlag == true) {
-//                            character[0].setIcon(stand[3]);
-//                            standT.restart();
-//                            walkT.stop();
-//                            keyFlag = false;
-//                        }
-//                    } else if (key == KeyEvent.VK_LEFT) {
-//                        left = false;
-//                        timeFlag=false;
-//                        if (keyFlag == true) {
-//                            character[0].setIcon(stand[0]);
-//                            standT.restart();
-//                            walkT.stop();
-//                            keyFlag = false;
-//                        }
-//                    } else if (key == KeyEvent.VK_Z) {
-//                        att = false;
-//                        if (keyFlag == true) {
-////                        character[0].setIcon(stand[0]);
-////                        standT.restart();
-////                        keyFlag=false;
-//                        }
+//                if (key == KeyEvent.VK_DOWN) {
+//                    charList.get(0).setDown(false);
+//                }else if(key==KeyEvent.VK_SPACE){
+//                    charList.get(0).setUp(false);
+//                }else if(key==KeyEvent.VK_LEFT){
+//                    if (keyFlag) {
+//                        charList.get(0).setIcon(stand[0]);
+//                        standT.restart();
+//                        walkT.stop();
+//                        keyFlag = true;
+////                        System.out.println("Left_false");
 //                    }
+//                    charList.get(0).setLeft(false);
+//                }else if(key==KeyEvent.VK_RIGHT){
+//                    charList.get(0).setRight(false);
+//                    if (keyFlag) {
+//                        charList.get(0).setIcon(stand[3]);
+//                        standT.restart();
+//                        walkT.stop();
+//                        keyFlag = false;
+//                    }
+//                }else if(key==KeyEvent.VK_Z){
+//                    charList.get(0).setAtt(false);
 //                }
-//            }
+//                if(keyFlag){
+//                    keyFlag = false;
+//                }
 //
-        });
-//        jlyPane.add(backgroundP, JLayeredPane.PALETTE_LAYER,new Integer(102));
-//        jlyPane.add();
+//            }
+//         });
     }
     private void setCharAnimal(int charType){
         for(int i=0;i<3;i++){
